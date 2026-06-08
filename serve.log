@@ -1,0 +1,45 @@
+ INFO  Accepting connections at http://localhost:3456
+ HTTP  5/31/2026 1:04:14 AM 127.0.0.1 GET /
+ HTTP  5/31/2026 1:04:14 AM 127.0.0.1 Returned 200 in 10 ms
+ HTTP  5/31/2026 1:04:22 AM 127.0.0.1 GET /
+ HTTP  5/31/2026 1:04:22 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  5/31/2026 1:04:23 AM ::1 GET /
+ HTTP  5/31/2026 1:04:23 AM ::1 Returned 200 in 2 ms
+ HTTP  5/31/2026 1:04:23 AM ::1 GET /manifest.json
+ HTTP  5/31/2026 1:04:23 AM ::1 Returned 200 in 0 ms
+ HTTP  5/31/2026 1:04:23 AM ::1 GET /sw.js
+ HTTP  5/31/2026 1:04:23 AM ::1 Returned 200 in 40 ms
+ HTTP  5/31/2026 1:04:23 AM ::1 GET /index.html
+ HTTP  5/31/2026 1:04:23 AM ::1 Returned 301 in 1 ms
+ HTTP  5/31/2026 1:04:23 AM ::1 GET /
+ HTTP  5/31/2026 1:04:23 AM ::1 Returned 304 in 0 ms
+ HTTP  5/31/2026 1:04:23 AM ::1 GET /index
+ HTTP  5/31/2026 1:04:23 AM ::1 Returned 301 in 1 ms
+ HTTP  5/31/2026 1:04:23 AM ::1 GET /manifest.json
+ HTTP  5/31/2026 1:04:23 AM ::1 Returned 304 in 0 ms
+ HTTP  5/31/2026 1:04:23 AM ::1 GET /
+ HTTP  5/31/2026 1:04:23 AM ::1 Returned 304 in 0 ms
+ HTTP  5/31/2026 1:04:23 AM ::1 GET /favicon.ico
+ HTTP  5/31/2026 1:04:23 AM ::1 GET /icons/icon-192.png
+ HTTP  5/31/2026 1:04:23 AM ::1 Returned 200 in 1 ms
+ HTTP  5/31/2026 1:04:23 AM ::1 Returned 404 in 2 ms
+ HTTP  5/31/2026 1:04:29 AM ::1 GET /
+ HTTP  5/31/2026 1:04:29 AM ::1 Returned 200 in 1 ms
+ HTTP  5/31/2026 1:04:29 AM ::1 GET /manifest.json
+ HTTP  5/31/2026 1:04:29 AM ::1 Returned 200 in 1 ms
+ HTTP  5/31/2026 1:04:29 AM ::1 GET /sw.js
+ HTTP  5/31/2026 1:04:29 AM ::1 Returned 200 in 0 ms
+ HTTP  5/31/2026 1:04:29 AM ::1 GET /index.html
+ HTTP  5/31/2026 1:04:29 AM ::1 Returned 301 in 0 ms
+ HTTP  5/31/2026 1:04:29 AM ::1 GET /
+ HTTP  5/31/2026 1:04:29 AM ::1 GET /index
+ HTTP  5/31/2026 1:04:29 AM ::1 Returned 301 in 0 ms
+ HTTP  5/31/2026 1:04:29 AM ::1 GET /manifest.json
+ HTTP  5/31/2026 1:04:29 AM ::1 Returned 304 in 1 ms
+ HTTP  5/31/2026 1:04:29 AM ::1 Returned 304 in 0 ms
+ HTTP  5/31/2026 1:04:29 AM ::1 GET /
+ HTTP  5/31/2026 1:04:29 AM ::1 Returned 304 in 1 ms
+ HTTP  5/31/2026 1:04:29 AM ::1 GET /favicon.ico
+ HTTP  5/31/2026 1:04:29 AM ::1 Returned 404 in 1 ms
+ HTTP  5/31/2026 1:04:29 AM ::1 GET /icons/icon-192.png
+ HTTP  5/31/2026 1:04:29 AM ::1 Returned 200 in 1 ms

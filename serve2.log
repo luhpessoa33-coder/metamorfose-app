@@ -1,0 +1,25 @@
+ INFO  Accepting connections at http://localhost:4567
+ HTTP  5/31/2026 1:05:00 AM 127.0.0.1 GET /
+ HTTP  5/31/2026 1:05:00 AM 127.0.0.1 Returned 200 in 9 ms
+ HTTP  5/31/2026 1:05:08 AM 127.0.0.1 GET /
+ HTTP  5/31/2026 1:05:08 AM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  5/31/2026 1:06:19 AM ::1 GET /
+ HTTP  5/31/2026 1:06:19 AM ::1 Returned 200 in 2 ms
+ HTTP  5/31/2026 1:06:19 AM ::1 GET /manifest.json
+ HTTP  5/31/2026 1:06:19 AM ::1 Returned 200 in 0 ms
+ HTTP  5/31/2026 1:06:19 AM ::1 GET /sw.js
+ HTTP  5/31/2026 1:06:19 AM ::1 Returned 200 in 1 ms
+ HTTP  5/31/2026 1:06:19 AM ::1 GET /index.html
+ HTTP  5/31/2026 1:06:19 AM ::1 Returned 301 in 1 ms
+ HTTP  5/31/2026 1:06:19 AM ::1 GET /
+ HTTP  5/31/2026 1:06:19 AM ::1 Returned 304 in 0 ms
+ HTTP  5/31/2026 1:06:19 AM ::1 GET /index
+ HTTP  5/31/2026 1:06:19 AM ::1 Returned 301 in 1 ms
+ HTTP  5/31/2026 1:06:19 AM ::1 GET /manifest.json
+ HTTP  5/31/2026 1:06:19 AM ::1 Returned 304 in 0 ms
+ HTTP  5/31/2026 1:06:19 AM ::1 GET /
+ HTTP  5/31/2026 1:06:19 AM ::1 Returned 304 in 0 ms
+ HTTP  5/31/2026 1:06:19 AM ::1 GET /favicon.ico
+ HTTP  5/31/2026 1:06:19 AM ::1 GET /icons/icon-192.png
+ HTTP  5/31/2026 1:06:19 AM ::1 Returned 200 in 1 ms
+ HTTP  5/31/2026 1:06:19 AM ::1 Returned 404 in 2 ms

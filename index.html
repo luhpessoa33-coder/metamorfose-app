@@ -1,0 +1,2154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+  <meta name="theme-color" content="#7c3aed"/>
+  <!-- iOS PWA / Apple Watch Handoff -->
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="apple-mobile-web-app-title" content="Metamorfose"/>
+  <!-- Apple Touch Icons for all iPhone sizes -->
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-192.png"/>
+  <link rel="apple-touch-icon" sizes="167x167" href="icons/icon-192.png"/>
+  <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-192.png"/>
+  <link rel="apple-touch-icon" sizes="120x120" href="icons/icon-192.png"/>
+  <!-- Apple Splash Screens for major iPhone models -->
+  <link rel="apple-touch-startup-image" media="screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)" href="icons/icon-512.png"/>
+  <link rel="apple-touch-startup-image" media="screen and (device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3)" href="icons/icon-512.png"/>
+  <link rel="apple-touch-startup-image" media="screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)" href="icons/icon-512.png"/>
+  <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" href="icons/icon-512.png"/>
+  <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" href="icons/icon-512.png"/>
+  <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="icons/icon-512.png"/>
+  <!-- Apple Watch / WatchOS meta -->
+  <meta name="msapplication-TileColor" content="#7c3aed"/>
+  <meta property="og:title" content="Metamorfose — Recomposição Corporal"/>
+  <meta property="og:description" content="Plano científico de 12 semanas com 344 estudos. Treino, nutrição e acompanhamento."/>
+  <meta property="og:image" content="https://iohhkjz1.scispace.co/icons/icon-512.png"/>
+  <meta property="og:url" content="https://iohhkjz1.scispace.co"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="apple-touch-fullscreen" content="yes"/>
+  <!-- Handoff / Universal Links -->
+  <meta name="apple-itunes-app" content="app-argument=https://iohhkjz1.scispace.co"/>
+  <!-- Open Graph / Compartilhamento -->
+  <meta property="og:title" content="Metamorfose — Plano Científico"/>
+  <meta property="og:description" content="Recomposição corporal em 12 semanas · 344 estudos · Glúteo, Pélvis & Escultura"/>
+  <meta property="og:url" content="https://iohhkjz1.scispace.co"/>
+  <meta property="og:type" content="website"/>
+  <meta name="description" content="Plano científico de recomposição corporal personalizado — 12 semanas"/>
+  <title>Metamorfose — Recomposição Corporal</title>
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="apple-touch-icon" href="icons/icon-192.png"/>
+  <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png"/>
+  <link rel="apple-touch-icon" sizes="512x512" href="icons/icon-512.png"/>
+  <!-- Performance: Pré-conexão -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin/>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin/>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin/>
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com"/>
+  <link rel="dns-prefetch" href="https://images.unsplash.com"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    :root{--safe-top:env(safe-area-inset-top,0px);--safe-bottom:env(safe-area-inset-bottom,0px)}
+    *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+    body{overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif;background:#0f0a1e;color:#f1f0ff;min-height:100vh;overflow-x:hidden}
+    .glass{background:rgba(255,255,255,0.06);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.10)}
+    .glass-dark{background:rgba(0,0,0,0.3);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.08)}
+    .gradient-text{background:linear-gradient(135deg,#c084fc,#f472b6,#fb923c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .btn-primary{background:linear-gradient(135deg,#7c3aed,#ec4899);border:none;color:white;font-weight:600;border-radius:14px;padding:14px 24px;cursor:pointer;transition:all 0.2s;box-shadow:0 4px 20px rgba(124,58,237,0.4);width:100%}
+    .btn-primary:active{transform:scale(0.97)}
+    .tab-btn{display:flex;flex-direction:column;align-items:center;gap:3px;padding:7px 8px;border-radius:12px;cursor:pointer;transition:all 0.2s;flex:1;background:transparent;border:none;color:rgba(255,255,255,0.4);font-size:9px;font-weight:500}
+    .tab-btn.active{color:#c084fc;background:rgba(192,132,252,0.12)}
+    .tab-btn svg{width:20px;height:20px}
+    .section{display:none}
+    .section.active{display:block}
+    .card{border-radius:20px;padding:18px;margin-bottom:14px}
+    .progress-ring-container{position:relative;width:150px;height:150px}
+    .progress-ring-bg{fill:none;stroke:rgba(255,255,255,0.08);stroke-width:10}
+    .progress-ring-fill{fill:none;stroke-width:10;stroke-linecap:round;stroke:url(#ringGrad);transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset 1.2s ease}
+    .badge{display:inline-block;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:600}
+    .badge-science{background:rgba(99,102,241,0.25);color:#a5b4fc}
+    .badge-warning{background:rgba(251,146,60,0.2);color:#fdba74}
+    .badge-success{background:rgba(52,211,153,0.2);color:#6ee7b7}
+    .badge-hiit{background:rgba(236,72,153,0.2);color:#f9a8d4}
+    .badge-danger{background:rgba(239,68,68,0.2);color:#fca5a5}
+
+    /* ── Exercise Card with Image ── */
+    .ex-card{border-radius:18px;overflow:hidden;margin-bottom:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08)}
+    .ex-img-wrap{position:relative;height:160px;overflow:hidden;background:#1a1030}
+    .ex-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease}
+    .ex-img-wrap:hover img{transform:scale(1.04)}
+    .ex-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,10,30,0.9) 0%,rgba(15,10,30,0.2) 60%,transparent 100%)}
+    .ex-img-badge{position:absolute;top:10px;right:10px}
+    .ex-img-muscle{position:absolute;bottom:10px;left:12px;font-size:11px;color:rgba(255,255,255,0.7)}
+    .ex-body{padding:12px 14px}
+    .ex-sets{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .ex-set-pill{background:rgba(124,58,237,0.2);border:1px solid rgba(124,58,237,0.3);border-radius:20px;padding:3px 10px;font-size:11px;color:#c084fc;font-weight:600}
+    .ex-tip{background:rgba(255,255,255,0.04);border-radius:10px;padding:8px 10px;margin-top:8px;font-size:12px;color:#c4b5fd;line-height:1.5}
+    .ex-safe-tag{display:flex;align-items:center;gap:5px;margin-top:6px;font-size:11px;color:#34d399;font-weight:600}
+
+    /* ── Nutrição / Cards de Alimentos ── */
+    .food-card{border-radius:18px;overflow:hidden;margin-bottom:12px;position:relative}
+    .food-img{width:100%;height:140px;object-fit:cover;display:block}
+    .food-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,10,30,0.95) 0%,rgba(15,10,30,0.3) 60%,transparent 100%)}
+    .food-content{position:absolute;bottom:0;left:0;right:0;padding:12px 14px}
+    .food-danger{position:absolute;top:10px;right:10px}
+
+    /* ── Phase accordion ── */
+    .phase-header{cursor:pointer;display:flex;align-items:center;justify-content:space-between}
+    .phase-body{overflow:hidden;max-height:0;transition:max-height 0.5s ease}
+    .phase-body.open{max-height:9999px}
+    .chevron{transition:transform 0.3s;display:inline-block;font-size:18px;color:#a78bfa}
+    .chevron.open{transform:rotate(180deg)}
+
+    /* ── Week pills ── */
+    .week-pill{display:inline-block;padding:3px 11px;border-radius:20px;font-size:11px;font-weight:700;margin-right:5px}
+    .phase-1{background:rgba(124,58,237,0.3);color:#c084fc}
+    .phase-2{background:rgba(236,72,153,0.3);color:#f9a8d4}
+    .phase-3{background:rgba(249,115,22,0.3);color:#fdba74}
+
+    /* ── Inputs ── */
+    input[type="number"],input[type="date"],input[type="text"]{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:#f1f0ff;border-radius:12px;padding:12px 16px;width:100%;font-size:16px;outline:none;transition:border-color 0.2s}
+    input:focus{border-color:#7c3aed;background:rgba(124,58,237,0.12)}
+
+    /* ── HIIT/LISS blocks ── */
+    .hiit-block{background:linear-gradient(135deg,rgba(236,72,153,0.15),rgba(249,115,22,0.1));border:1px solid rgba(236,72,153,0.25);border-radius:16px;padding:16px;margin-bottom:14px}
+    .liss-block{background:linear-gradient(135deg,rgba(34,211,238,0.1),rgba(99,102,241,0.1));border:1px solid rgba(34,211,238,0.2);border-radius:16px;padding:16px;margin-bottom:14px}
+
+    /* ── Nav ── */
+    .nav-bar{position:fixed;bottom:0;left:0;right:0;padding-bottom:calc(6px + var(--safe-bottom));z-index:100}
+    .scroll-area{padding-top:14px;padding-bottom:calc(95px + var(--safe-bottom));min-height:100vh}
+    .header-safe{padding-top:calc(14px + var(--safe-top))}
+
+    /* ── Measure ── */
+    .measure-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.07)}
+    .measure-row:last-child{border-bottom:none}
+
+    /* ── Implant safety ── */
+    .dot-ok{width:8px;height:8px;border-radius:50%;background:#34d399;flex-shrink:0;margin-top:5px}
+    .dot-warn{width:8px;height:8px;border-radius:50%;background:#fb923c;flex-shrink:0;margin-top:5px}
+    .dot-stop{width:8px;height:8px;border-radius:50%;background:#ef4444;flex-shrink:0;margin-top:5px}
+
+    /* ── Referências Científicas ── */
+    .science-ref{background:rgba(99,102,241,0.1);border-radius:12px;padding:11px 13px;margin-bottom:8px;font-size:12px;line-height:1.5;border-left:3px solid #6366f1}
+
+    /* ── Chart ── */
+    .chart-wrap{position:relative;max-height:210px}
+
+    /* ── Misc ── */
+    ::-webkit-scrollbar{width:0}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    .fade-in{animation:fadeIn 0.35s ease forwards}
+    .tip-number{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#ec4899);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+    .section-title{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#a78bfa;margin-bottom:10px;margin-top:4px}
+
+    /* ── Pelvic special ── */
+    .pelvic-card{background:linear-gradient(135deg,rgba(236,72,153,0.12),rgba(124,58,237,0.12));border:1px solid rgba(236,72,153,0.2);border-radius:18px;padding:16px;margin-bottom:12px}
+    .sculpt-card{background:linear-gradient(135deg,rgba(249,115,22,0.1),rgba(124,58,237,0.1));border:1px solid rgba(249,115,22,0.2);border-radius:18px;padding:16px;margin-bottom:12px}
+
+    /* ── Food danger badge ── */
+    .danger-level-3{background:rgba(239,68,68,0.9);color:white;padding:3px 9px;border-radius:20px;font-size:10px;font-weight:700}
+    .danger-level-2{background:rgba(251,146,60,0.9);color:white;padding:3px 9px;border-radius:20px;font-size:10px;font-weight:700}
+    .alert-card{background:linear-gradient(135deg,rgba(251,146,60,0.15),rgba(239,68,68,0.1));border:1px solid rgba(251,146,60,0.3);border-radius:16px;padding:16px}
+
+    /* ── Notification Modal ─────────────────────────────── */
+    .notif-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:200;display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.25s}
+    .notif-modal-overlay.open{opacity:1;pointer-events:all}
+    .notif-modal{background:linear-gradient(160deg,#1a0f2e,#0f0a1e);border:1px solid rgba(192,132,252,0.2);border-radius:28px 28px 0 0;padding:28px 20px 40px;width:100%;max-width:480px;transform:translateY(100%);transition:transform 0.3s cubic-bezier(.32,1.2,.5,1)}
+    .notif-modal-overlay.open .notif-modal{transform:translateY(0)}
+    .notif-drag-handle{width:40px;height:4px;background:rgba(255,255,255,0.2);border-radius:2px;margin:0 auto 20px}
+    .notif-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+    .notif-row:last-child{border-bottom:none}
+    .notif-label{font-size:13px;color:rgba(255,255,255,0.85);font-weight:500}
+    .notif-sublabel{font-size:11px;color:rgba(192,132,252,0.7);margin-top:2px}
+    .notif-time-input{background:rgba(192,132,252,0.12);border:1px solid rgba(192,132,252,0.25);border-radius:10px;color:#e9d5ff;font-size:14px;font-weight:600;padding:6px 10px;width:90px;text-align:center}
+    .notif-time-input:focus{outline:none;border-color:#c084fc}
+    .toggle-switch{position:relative;width:44px;height:24px;flex-shrink:0}
+    .toggle-switch input{opacity:0;width:0;height:0}
+    .toggle-slider{position:absolute;inset:0;background:rgba(255,255,255,0.12);border-radius:24px;cursor:pointer;transition:0.3s}
+    .toggle-slider:before{content:'';position:absolute;width:18px;height:18px;left:3px;top:3px;background:white;border-radius:50%;transition:0.3s}
+    .toggle-switch input:checked + .toggle-slider{background:linear-gradient(90deg,#7c3aed,#ec4899)}
+    .toggle-switch input:checked + .toggle-slider:before{transform:translateX(20px)}
+    /* ── Notification Bell Badge ────────────────────────── */
+    .notif-bell-btn{position:fixed;top:16px;right:16px;z-index:150;background:rgba(192,132,252,0.15);border:1px solid rgba(192,132,252,0.3);border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s}
+    .notif-bell-btn:hover{background:rgba(192,132,252,0.25)}
+    .notif-bell-btn svg{width:20px;height:20px;color:#c084fc}
+    .notif-badge{position:absolute;top:-3px;right:-3px;background:#ec4899;border-radius:50%;width:14px;height:14px;font-size:8px;font-weight:700;color:white;display:flex;align-items:center;justify-content:center}
+    /* ── Banner de Permissão ──────────────────────────────── */
+    .perm-banner{background:linear-gradient(90deg,rgba(124,58,237,0.25),rgba(236,72,153,0.2));border:1px solid rgba(192,132,252,0.3);border-radius:16px;padding:14px 16px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+    .perm-banner.hidden{display:none}
+    .perm-btn{background:linear-gradient(90deg,#7c3aed,#ec4899);border:none;border-radius:10px;color:white;font-size:12px;font-weight:700;padding:8px 14px;cursor:pointer;white-space:nowrap}
+    /* ── Scheduled List ─────────────────────────────────── */
+    .sched-item{display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(255,255,255,0.04);border-radius:12px;margin-bottom:8px}
+    .sched-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+    .sched-dot.active{background:#34d399}
+    .sched-dot.inactive{background:rgba(255,255,255,0.2)}
+
+    /* ── Animações & Micro-interações ────────────────── */
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes pulse-glow{0%,100%{box-shadow:0 0 6px rgba(192,132,252,0.3)}50%{box-shadow:0 0 18px rgba(192,132,252,0.6)}}
+    @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+    @keyframes bounce-in{0%{transform:scale(0.3);opacity:0}50%{transform:scale(1.05)}70%{transform:scale(0.95)}100%{transform:scale(1);opacity:1}}
+    @keyframes counter-pop{0%{transform:scale(1)}50%{transform:scale(1.3)}100%{transform:scale(1)}}
+    .fade-in-up{animation:fadeInUp 0.5s ease forwards}
+    .bounce-in{animation:bounce-in 0.5s ease forwards}
+    .counter-pop{animation:counter-pop 0.25s ease}
+    .pulse-glow{animation:pulse-glow 2s ease-in-out infinite}
+    .card{animation:fadeInUp 0.4s ease forwards}
+
+    /* ── Carregamento Esqueleto ───────────────────────────────── */
+    .skeleton{background:linear-gradient(90deg,rgba(255,255,255,0.04) 25%,rgba(255,255,255,0.08) 50%,rgba(255,255,255,0.04) 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:12px}
+
+    /* ── Hidratação ─────────────────────────────────── */
+    .water-btn{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#06b6d4,#3b82f6);border:none;color:white;font-size:24px;cursor:pointer;transition:all 0.15s;box-shadow:0 4px 14px rgba(6,182,212,0.4)}
+    .water-btn:active{transform:scale(0.9)}
+    .water-progress{height:6px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden;margin-top:8px}
+    .water-fill{height:100%;background:linear-gradient(90deg,#06b6d4,#3b82f6);border-radius:3px;transition:width 0.5s cubic-bezier(.4,2,.6,1)}
+    .water-drop{display:inline-block;font-size:14px;margin:0 1px;transition:opacity 0.3s}
+    .water-drop.empty{opacity:0.2}
+
+    /* ── Contador de Sequência ────────────────────────────────── */
+    .streak-card{background:linear-gradient(135deg,rgba(249,115,22,0.12),rgba(236,72,153,0.1));border:1px solid rgba(249,115,22,0.2);border-radius:18px;padding:14px 16px;display:flex;align-items:center;gap:12px;margin-bottom:14px}
+    .streak-fire{font-size:32px;animation:pulse-glow 2s infinite}
+    .streak-num{font-size:28px;font-weight:800;color:#fb923c}
+    .streak-label{font-size:11px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:1px}
+
+    /* ── Timer de Descanso ────────────────────────────────────── */
+    .timer-btn{background:linear-gradient(135deg,rgba(124,58,237,0.3),rgba(236,72,153,0.2));border:1px solid rgba(192,132,252,0.3);border-radius:14px;padding:10px 16px;color:#e9d5ff;font-weight:600;font-size:13px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:all 0.2s}
+    .timer-btn:active{transform:scale(0.95)}
+    .timer-display{font-size:36px;font-weight:800;font-family:'SF Mono',monospace;color:#c084fc;text-align:center;margin:8px 0}
+    .timer-ring{width:80px;height:80px;border-radius:50%;border:4px solid rgba(255,255,255,0.08);position:relative;display:flex;align-items:center;justify-content:center}
+    .timer-ring-fill{position:absolute;inset:-4px;border-radius:50%;border:4px solid transparent;border-top-color:#c084fc;transition:transform 0.1s linear}
+
+    /* ── Estimativa de Gordura ─────────────────────────────── */
+    .bf-result{font-size:36px;font-weight:800;background:linear-gradient(135deg,#c084fc,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-align:center}
+    .bf-bar{height:8px;background:rgba(255,255,255,0.08);border-radius:4px;overflow:hidden;margin-top:6px}
+    .bf-fill{height:100%;border-radius:4px;transition:width 0.8s ease}
+
+    /* ── Frase Motivacional ─────────────────────────────── */
+    .quote-card{background:linear-gradient(135deg,rgba(124,58,237,0.08),rgba(236,72,153,0.06));border:1px solid rgba(192,132,252,0.15);border-radius:16px;padding:14px 16px;margin-bottom:14px;position:relative;overflow:hidden}
+    .quote-card::before{content:'"';position:absolute;top:-8px;left:10px;font-size:72px;color:rgba(192,132,252,0.15);font-family:serif;line-height:1}
+    .quote-text{font-size:13px;font-style:italic;color:rgba(255,255,255,0.8);line-height:1.5;padding-left:20px}
+
+    /* ── Progresso Semanal ────────────────────────────────── */
+    .week-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+    .day-dot{width:100%;aspect-ratio:1;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:rgba(255,255,255,0.5)}
+    .day-dot.done{background:linear-gradient(135deg,#7c3aed,#ec4899);color:white}
+    .day-dot.today{border:2px solid #c084fc;color:#c084fc}
+    .day-dot.rest{background:rgba(255,255,255,0.04)}
+
+    /* ── Estados de Foco / Acessibilidade ──────────────────── */
+    button:focus-visible,.tab-btn:focus-visible,input:focus-visible{outline:2px solid #c084fc;outline-offset:2px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+    /* ── Simulação de Feedback Tátil ────────────────────── */
+    .haptic:active{transform:scale(0.97);transition:transform 0.05s}
+
+    /* ── Botão de Exportação ─────────────────────────────────── */
+    .export-btn{background:rgba(52,211,153,0.12);border:1px solid rgba(52,211,153,0.25);border-radius:12px;padding:10px 16px;color:#6ee7b7;font-size:12px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:all 0.2s}
+    .export-btn:hover{background:rgba(52,211,153,0.2)}
+  </style>
+</head>
+<body>
+
+<!-- BG blobs -->
+<div class="fixed inset-0 pointer-events-none" style="z-index:0">
+  <div style="position:absolute;top:-20%;left:-20%;width:55%;height:55%;background:radial-gradient(circle,rgba(124,58,237,0.18),transparent 70%);border-radius:50%"></div>
+  <div style="position:absolute;bottom:-10%;right:-10%;width:50%;height:50%;background:radial-gradient(circle,rgba(236,72,153,0.14),transparent 70%);border-radius:50%"></div>
+</div>
+
+<div class="relative" style="z-index:1">
+
+<!-- ══════════════════════════════════════════ DASHBOARD ══ -->
+<section id="tab-dashboard" class="section active scroll-area px-4">
+  <div class="header-safe">
+    <div class="flex items-center justify-between mb-5">
+      <div>
+        <p class="text-xs text-purple-300 font-semibold tracking-widest uppercase">Plano Científico</p>
+        <h1 class="text-2xl font-bold gradient-text">Metamorfose ✨</h1>
+      </div>
+      <div class="flex items-center gap-2">
+        <button class="bell-btn" onclick="openNotifModal()" title="Notificações & Configurações" aria-label="Configurações">
+          <div class="bell-dot" id="bellDot" style="display:none"></div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#c084fc"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        </button>
+        <div class="glass rounded-2xl px-3 py-2 text-center">
+          <p class="text-xs text-purple-300">Meta</p>
+          <p class="text-lg font-bold text-white">70 kg</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progress Ring -->
+    <div class="card glass flex flex-col items-center py-5">
+      <div class="progress-ring-container mb-4">
+        <svg viewBox="0 0 150 150" width="150" height="150">
+          <defs>
+            <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#7c3aed"/>
+              <stop offset="100%" style="stop-color:#ec4899"/>
+            </linearGradient>
+          </defs>
+          <circle class="progress-ring-bg" cx="75" cy="75" r="65"/>
+          <circle id="ringFill" class="progress-ring-fill" cx="75" cy="75" r="65" stroke-dasharray="408.4" stroke-dashoffset="408.4"/>
+        </svg>
+        <div class="absolute inset-0 flex flex-col items-center justify-center">
+          <p class="text-3xl font-bold text-white" id="currentWeightDisplay">80</p>
+          <p class="text-sm text-purple-300">kg atual</p>
+          <p class="text-xs text-pink-300 font-semibold mt-1" id="progressPercent">0% da meta</p>
+        </div>
+      </div>
+      <div class="flex gap-6 w-full justify-center">
+        <div class="text-center"><p class="text-xl font-bold text-white" id="kgLost">0</p><p class="text-xs text-purple-300">kg perdidos</p></div>
+        <div class="text-center"><p class="text-xl font-bold text-white" id="kgRemaining">10</p><p class="text-xs text-purple-300">kg restantes</p></div>
+        <div class="text-center"><p class="text-xl font-bold text-white" id="weekNumber">1</p><p class="text-xs text-purple-300">semana atual</p></div>
+      </div>
+    </div>
+
+    <!-- Register weight -->
+    <!-- Banner de Permissão (exibido quando notificações ainda não permitidas) -->
+    <div class="perm-banner hidden" id="dashPermBanner">
+      <span style="font-size:24px;flex-shrink:0">🔔</span>
+      <div style="flex:1">
+        <p class="text-sm font-bold text-white">Ativar Lembretes</p>
+        <p class="text-xs text-purple-200">Treino, refeições e hidratação</p>
+      </div>
+      <button class="perm-btn" onclick="requestNotifPermission()">Ativar</button>
+    </div>
+
+    <!-- Card de lembretes ativos (exibido quando notificações habilitadas) -->
+    <div class="card glass hidden" id="schedCard">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="font-bold text-white text-sm">🔔 Lembretes Ativos</h3>
+        <button onclick="openNotifModal()" style="font-size:11px;color:#c084fc;background:rgba(192,132,252,0.1);border:1px solid rgba(192,132,252,0.2);border-radius:8px;padding:4px 10px;cursor:pointer">Editar</button>
+      </div>
+      <div id="dashSchedList"></div>
+    </div>
+
+
+    <!-- Frase Motivacional -->
+    <div class="quote-card" id="quoteCard">
+      <p class="quote-text" id="quoteText">"A dor que você sente hoje será a força que você sentirá amanhã."</p>
+    </div>
+
+    <!-- Contador de Sequência -->
+    <div class="streak-card" id="streakCard">
+      <span class="streak-fire">🔥</span>
+      <div>
+        <p class="streak-num" id="streakNum">0</p>
+        <p class="streak-label">dias consecutivos</p>
+      </div>
+      <button onclick="registerTrainingDay()" style="margin-left:auto;background:linear-gradient(135deg,#7c3aed,#ec4899);border:none;color:white;border-radius:10px;padding:8px 14px;font-size:11px;font-weight:700;cursor:pointer" class="haptic">✓ Treinei Hoje</button>
+    </div>
+
+    <!-- Hidratação -->
+    <div class="card glass">
+      <div class="flex items-center justify-between mb-2">
+        <h3 class="font-bold text-white text-sm">💧 Hidratação</h3>
+        <span class="text-xs text-purple-300"><span id="waterCount">0</span> / 8 copos</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <button class="water-btn haptic" onclick="addWater()" aria-label="Adicionar copo de água">💧</button>
+        <div style="flex:1">
+          <div id="waterDrops" class="mb-1"></div>
+          <div class="water-progress"><div class="water-fill" id="waterFill" style="width:0%"></div></div>
+        </div>
+        <button onclick="resetWater()" style="background:none;border:none;color:rgba(255,255,255,0.3);font-size:18px;cursor:pointer" aria-label="Resetar água">↺</button>
+      </div>
+    </div>
+
+    <!-- Progresso Semanal -->
+    <div class="card glass">
+      <h3 class="font-bold text-white text-sm mb-3">📅 Semana Atual</h3>
+      <div class="week-grid" id="weekGrid"></div>
+      <p class="text-xs text-purple-300 text-center mt-2" id="weekSummary"></p>
+    </div>
+
+    <!-- Timer de Descanso -->
+    <div class="card glass">
+      <div class="flex items-center justify-between mb-2">
+        <h3 class="font-bold text-white text-sm">⏱ Timer de Descanso</h3>
+        <div class="flex gap-2">
+          <button class="timer-btn haptic" onclick="startTimer(60)">1:00</button>
+          <button class="timer-btn haptic" onclick="startTimer(90)">1:30</button>
+          <button class="timer-btn haptic" onclick="startTimer(120)">2:00</button>
+        </div>
+      </div>
+      <div class="flex items-center justify-center gap-4" id="timerArea" style="display:none">
+        <div class="timer-ring"><span class="timer-display" id="timerDisplay">0:00</span></div>
+        <button onclick="stopTimer()" style="background:rgba(239,68,68,0.2);border:1px solid rgba(239,68,68,0.3);border-radius:10px;padding:8px 12px;color:#fca5a5;font-size:12px;font-weight:600;cursor:pointer">Parar</button>
+      </div>
+    </div>
+
+    <!-- Body Fat Estimator -->
+    <div class="card glass">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="font-bold text-white text-sm">📐 Estimativa de % Gordura</h3>
+        <span class="badge badge-science">Método Navy</span>
+      </div>
+      <div class="grid grid-cols-3 gap-2 mb-3">
+        <div><label class="text-xs text-purple-300 block mb-1">Cintura (cm)</label><input type="number" id="bfWaist" placeholder="80" style="padding:8px 10px;font-size:13px"/></div>
+        <div><label class="text-xs text-purple-300 block mb-1">Quadril (cm)</label><input type="number" id="bfHip" placeholder="100" style="padding:8px 10px;font-size:13px"/></div>
+        <div><label class="text-xs text-purple-300 block mb-1">Pescoço (cm)</label><input type="number" id="bfNeck" placeholder="34" style="padding:8px 10px;font-size:13px"/></div>
+      </div>
+      <button onclick="calcBodyFat()" class="btn-primary haptic" style="padding:10px;font-size:13px">Calcular</button>
+      <div id="bfResult" class="mt-3" style="display:none">
+        <p class="bf-result" id="bfPercent">—%</p>
+        <div class="bf-bar"><div class="bf-fill" id="bfBar" style="width:0%;background:linear-gradient(90deg,#34d399,#fbbf24,#ef4444)"></div></div>
+        <p class="text-xs text-purple-300 text-center mt-1" id="bfCategory"></p>
+      </div>
+    </div>
+
+    <!-- Exportação de Dados -->
+    <div class="flex gap-2 mb-4">
+      <button class="export-btn haptic" onclick="exportAllData()">📥 Exportar Dados (JSON)</button>
+      <button class="export-btn haptic" onclick="shareApp()">📤 Compartilhar App</button>
+    </div>
+    <div class="card glass">
+      <h3 class="font-bold text-white mb-3 text-base">📊 Registrar Peso</h3>
+      <div class="flex gap-3">
+        <div class="flex-1"><input type="number" id="weightInput" placeholder="Ex: 79.5" step="0.1" min="40" max="200"/></div>
+        <div class="flex-1"><input type="date" id="dateInput"/></div>
+      </div>
+      <button class="btn-primary mt-3" onclick="addWeightEntry()">Registrar ✓</button>
+    </div>
+
+    <!-- Weight chart -->
+    <div class="card glass">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="font-bold text-white text-base">📈 Evolução do Peso</h3>
+        <span class="badge badge-science">12 semanas</span>
+      </div>
+      <div class="chart-wrap"><canvas id="weightChart"></canvas></div>
+    </div>
+
+    <!-- Current phase -->
+    <div class="card glass"><h3 class="font-bold text-white mb-3 text-base">🗓 Fase Atual</h3><div id="currentPhaseCard"></div></div>
+
+    <!-- Quick stats -->
+    <div class="grid grid-cols-2 gap-3 mb-4">
+      <div class="glass card text-center py-4"><p class="text-2xl font-bold gradient-text">3→4x</p><p class="text-xs text-purple-300 mt-1">treinos/semana</p></div>
+      <div class="glass card text-center py-4"><p class="text-2xl font-bold gradient-text">2+1</p><p class="text-xs text-purple-300 mt-1">HIIT + LISS/sem</p></div>
+      <div class="glass card text-center py-4"><p class="text-2xl font-bold gradient-text">12</p><p class="text-xs text-purple-300 mt-1">semanas de plano</p></div>
+      <div class="glass card text-center py-4"><p class="text-2xl font-bold gradient-text">344</p><p class="text-xs text-purple-300 mt-1">estudos analisados</p></div>
+    </div>
+
+    <!-- History -->
+    <div class="card glass">
+      <h3 class="font-bold text-white mb-3 text-base">🗂 Histórico</h3>
+      <div id="historyList"><p class="text-sm text-purple-300 text-center py-4">Nenhum registro ainda. Adicione seu primeiro peso! 💪</p></div>
+      <button onclick="clearHistory()" class="text-xs text-red-400 mt-2 w-full text-center opacity-60">Limpar histórico</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ TREINOS ══ -->
+<section id="tab-treinos" class="section scroll-area px-4">
+  <div class="header-safe">
+    <h2 class="text-xl font-bold gradient-text mb-1">💪 Plano de Treino</h2>
+    <p class="text-xs text-purple-300 mb-4">Periodização Ondulatória · 344 estudos · Foco: Glúteo, Pélvis & Escultura</p>
+
+    <!-- Banner de Ciência -->
+    <div class="card glass mb-4" style="background:linear-gradient(135deg,rgba(124,58,237,0.18),rgba(236,72,153,0.12))">
+      <div class="flex items-center gap-2 mb-2"><span class="badge badge-science">🔬 Evidência</span></div>
+      <p class="text-sm text-purple-100 leading-relaxed">Programas ondulatórios 3→4x/semana com foco em <strong class="text-pink-300">dominância de quadril</strong> (hip thrust, stiff, elevação pélvica) produzem os maiores ganhos de glúteo e redução de celulite em mulheres. Fortalecimento do assoalho pélvico melhora postura, core profundo e escultura abdominal.</p>
+    </div>
+
+    <!-- ── FASE 1 ── -->
+    <div class="card glass mb-3">
+      <div class="phase-header" onclick="togglePhase('fase1')">
+        <div>
+          <div class="flex items-center gap-2 mb-1"><span class="week-pill phase-1">Semanas 1–4</span><span class="badge badge-science">Adaptação</span></div>
+          <h3 class="font-bold text-white">Fase 1 — Base & Técnica</h3>
+          <p class="text-xs text-purple-300 mt-1">3x/semana · Full Body · 3 séries · 12–15 reps</p>
+        </div>
+        <span class="chevron" id="chevron-fase1">▾</span>
+      </div>
+      <div class="phase-body" id="fase1">
+        <div class="mt-4">
+
+          <p class="section-title">🍑 Elevação de Quadril & Pélvis — Prioridade</p>
+
+          <!-- Hip Thrust -->
+          <div class="ex-card">
+            <div class="ex-img-wrap">
+              <img src="https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?w=500&q=80" alt="Hip Thrust" loading="lazy"/>
+              <div class="ex-img-overlay"></div>
+              <span class="ex-img-badge"><span class="badge badge-hiit">🔥 Principal</span></span>
+              <span class="ex-img-muscle">Glúteo Máximo</span>
+            </div>
+            <div class="ex-body">
+              <p class="font-bold text-white">Hip Thrust com Peso Corporal</p>
+              <p class="text-xs text-purple-300">Glúteo máximo · Isquiotibiais · Assoalho pélvico</p>
+              <div class="ex-sets"><span class="ex-set-pill">3 séries</span><span class="ex-set-pill">15 reps</span><span class="ex-set-pill">2s no topo</span></div>
+              <div class="ex-tip">💡 Apoie os ombros no banco. Pés na largura do quadril. Aperte o glúteo com força no topo e segure 2 segundos. Ativa também o assoalho pélvico.</div>
+            </div>
+          </div>
+
+          <!-- Glute Bridge -->
+          <div class="ex-card">
+            <div class="ex-img-wrap">
+              <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500&q=80" alt="Glute Bridge" loading="lazy"/>
+              <div class="ex-img-overlay"></div>
+              <span class="ex-img-badge"><span class="badge badge-success">Pélvis</span></span>
+              <span class="ex-img-muscle">Glúteo + Pélvis</span>
+            </div>
+            <div class="ex-body">
+              <p class="font-bold text-white">Elevação Pélvica (Glute Bridge)</p>
+              <p class="text-xs text-purple-300">Glúteo · Assoalho pélvico · Core profundo</p>
+              <div class="ex-sets"><span class="ex-set-pill">3 séries</span><span class="ex-set-pill">20 reps</span><span class="ex-set-pill">Lento</span></div>
+              <div class="ex-tip">💡 Deitada no chão, joelhos dobrados. Suba o quadril, contraia o assoalho pélvico (como segurar o xixi) no topo. Desça devagar em 3 segundos.</div>
+            </div>
+          </div>
+
+          <!-- Kegel + Bridge -->
+          <div class="pelvic-card">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xl">🌸</span>
+              <div><p class="font-bold text-white text-sm">Kegel + Elevação Pélvica</p><p class="text-xs text-pink-300">Assoalho pélvico · Core profundo · Postura</p></div>
+            </div>
+            <div class="ex-sets mb-2"><span class="ex-set-pill">3 séries</span><span class="ex-set-pill">10 reps</span><span class="ex-set-pill">5s contração</span></div>
+            <div class="ex-tip">🌸 <strong>Como fazer:</strong> Deitada, joelhos dobrados. Contraia o assoalho pélvico (Kegel) por 5s → suba o quadril → mantenha 3s → desça devagar → relaxe o pélvico. Fortalece o core profundo, melhora postura e escultura abdominal.</div>
+          </div>
+
+          <p class="section-title mt-2">🏋️ Exercícios Full Body</p>
+
+          <!-- Squat -->
+          <div class="ex-card">
+            <div class="ex-img-wrap">
+              <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=500&q=80" alt="Agachamento" loading="lazy"/>
+              <div class="ex-img-overlay"></div>
+              <span class="ex-img-badge"><span class="badge badge-success">Composto</span></span>
+              <span class="ex-img-muscle">Glúteo · Quadríceps</span>
+            </div>
+            <div class="ex-body">
+              <p class="font-bold text-white">Agachamento Goblet</p>
+              <p class="text-xs text-purple-300">Glúteo máximo · Quadríceps · Core</p>
+              <div class="ex-sets"><span class="ex-set-pill">3 séries</span><span class="ex-set-pill">15 reps</span></div>
+              <div class="ex-tip">💡 Segure halter no peito. Pés na largura dos ombros, pontas levemente abertas. Desça até as coxas ficarem paralelas ao chão.</div>
+            </div>
+          </div>
+
+          <!-- Deadlift -->
+          <div class="ex-card">
+            <div class="ex-img-wrap">
+              <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&q=80" alt="Levantamento Terra" loading="lazy"/>
+              <div class="ex-img-overlay"></div>
+              <span class="ex-img-badge"><span class="badge badge-hiit">Posterior</span></span>
+              <span class="ex-img-muscle">Isquiotibiais · Glúteo</span>
+            </div>
+            <div class="ex-body">
+              <p class="font-bold text-white">Levantamento Terra Romeno</p>
+              <p class="text-xs text-purple-300">Isquiotibiais · Glúteo · Lombar</p>
+              <div class="ex-sets"><span class="ex-set-pill">3 séries</span><span class="ex-set-pill">12 reps</span></div>
+              <div class="ex-tip">💡 Joelhos levemente flexionados. Desça os halteres pela frente das pernas sentindo o alongamento dos isquiotibiais. Não arredonde as costas.</div>
+            </div>
+          </div>
+
+          <!-- Lunge -->
+          <div class="ex-card">
+            <div class="ex-img-wrap">
+              <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&q=80" alt="Afundo" loading="lazy"/>
+              <div class="ex-img-overlay"></div>
+              <span class="ex-img-badge"><span class="badge badge-success">Equilíbrio</span></span>
+              <span class="ex-img-muscle">Glúteo · Quadríceps</span>
+            </div>
+            <div class="ex-body">
+              <p class="font-bold text-white">Afundo Estático</p>
+              <p class="text-xs text-purple-300">Glúteo · Quadríceps · Equilíbrio</p>
+              <div class="ex-sets"><span class="ex-set-pill">3 séries</span><span class="ex-set-pill">12/lado</span></div>
+              <div class="ex-tip">💡 Passo largo à frente. Joelho traseiro quase toca o chão. Mantenha o tronco ereto. Empurre pelo calcanhar da perna da frente para subir.</div>
+            </div>
+          </div>
+
+          <!-- Plank -->
+          <div class="ex-card">
+            <div class="ex-img-wrap">
+              <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500&q=80" alt="Prancha" loading="lazy"/>
+              <div class="ex-img-overlay"></div>
+              <span class="ex-img-badge"><span class="badge badge-science">Core</span></span>
+              <span class="ex-img-muscle">Core · Transverso</span>
+            </div>
+            <div class="ex-body">
+              <p class="font-bold text-white">Prancha Frontal</p>
+              <p class="text-xs text-purple-300">Core profundo · Transverso abdominal · Postura</p>
+              <div class="ex-sets"><span class="ex-set-pill">3 séries</span><span class="ex-set-pill">30–40s</span></div>
+              <div class="ex-tip">💡 Cotovelos sob os ombros. Corpo reto como uma prancha. Contraia o abdômen e o assoalho pélvico simultaneamente.</div>
+            </div>
+          </div>
+
+          <!-- Rowing -->
+          <div class="ex-card">
+            <div class="ex-img-wrap">
+              <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=500&q=80" alt="Remada" loading="lazy"/>
+              <div class="ex-img-overlay"></div>
+              <span class="ex-img-badge"><span class="badge badge-science">Costas</span></span>
+              <span class="ex-img-muscle">Dorsal · Romboides</span>
+            </div>
+            <div class="ex-body">
+              <p class="font-bold text-white">Remada Curvada com Halteres</p>
+              <p class="text-xs text-purple-300">Dorsal · Romboides · Bíceps · Postura</p>
+              <div class="ex-sets"><span class="ex-set-pill">3 séries</span><span class="ex-set-pill">12 reps</span></div>
+              <div class="ex-tip">💡 Tronco inclinado ~45°. Puxe os cotovelos para trás e para cima. Aperte as escápulas no topo. Essencial para postura e definição de costas.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ── FASE 2 ── -->
+    <div class="card glass mb-3">
+      <div class="phase-header" onclick="togglePhase('fase2')">
+        <div>
+          <div class="flex items-center gap-2 mb-1"><span class="week-pill phase-2">Semanas 5–8</span><span class="badge badge-hiit">Hipertrofia</span></div>
+          <h3 class="font-bold text-white">Fase 2 — Hipertrofia & Escultura</h3>
+          <p class="text-xs text-purple-300 mt-1">4x/semana · Upper/Lower · 4 séries · 8–12 reps</p>
+        </div>
+        <span class="chevron" id="chevron-fase2">▾</span>
+      </div>
+      <div class="phase-body" id="fase2">
+        <div class="mt-4">
+          <div class="grid grid-cols-4 gap-2 mb-4 text-center text-xs">
+            <div class="glass-dark rounded-xl p-2"><p class="font-bold text-purple-300">SEG</p><p class="text-white">Inferior A</p></div>
+            <div class="glass-dark rounded-xl p-2"><p class="font-bold text-pink-300">TER</p><p class="text-white">Superior A</p></div>
+            <div class="glass-dark rounded-xl p-2"><p class="font-bold text-orange-300">QUI</p><p class="text-white">Inferior B</p></div>
+            <div class="glass-dark rounded-xl p-2"><p class="font-bold text-cyan-300">SEX</p><p class="text-white">Superior B</p></div>
+          </div>
+
+          <p class="section-title">🍑 Inferior A — Glúteo & Quadríceps (com imagens)</p>
+
+          <div class="ex-card">
+            <div class="ex-img-wrap">
+              <img src="https://images.unsplash.com/photo-1604480132736-44c188fe4d20?w=500&q=80" alt="Hip Thrust Barra" loading="lazy"/>
+              <div class="ex-img-overlay"></div>
+              <span class="ex-img-badge"><span class="badge badge-hiit">⭐ Foco</span></span>
+              <span class="ex-img-muscle">Glúteo Máximo — exercício rei</span>
+            </div>
+            <div class="ex-body">
+              <p class="font-bold text-white">Hip Thrust com Barra / Halter</p>
+              <p class="text-xs text-purple-300">Glúteo máximo · Alta ativação · Escultura posterior</p>
+              <div class="ex-sets"><span class="ex-set-pill">4 séries</span><span class="ex-set-pill">10 reps</span><span class="ex-set-pill">Carga progressiva</span></div>
+              <div class="ex-tip">🔬 Estudo: Fortalecimento glúteo combinado com terapia reduziu grau de celulite vs terapia isolada. Hip thrust é o exercício com maior ativação do glúteo máximo (>200% EMG).</div>
+            </div>
+          </div>
+
+          <div class="ex-card">
+            <div class="ex-img-wrap">
+              <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=500&q=80" alt="Agachamento Livre" loading="lazy"/>
+              <div class="ex-img-overlay"></div>
+              <span class="ex-img-badge"><span class="badge badge-success">Composto</span></span>
+              <span class="ex-img-muscle">Glúteo · Quadríceps</span>
+            </div>
+            <div class="ex-body">
+              <p class="font-bold text-white">Agachamento Livre</p>
+              <p class="text-xs text-purple-300">Glúteo · Quadríceps · Core · Escultura total</p>
+              <div class="ex-sets"><span class="ex-set-pill">4 séries</span><span class="ex-set-pill">10 reps</span></div>
+              <div class="ex-tip">💡 Aumente a carga semana a semana. Desça abaixo de 90° para máxima ativação do glúteo.</div>
+            </div>
+          </div>
+
+          <!-- Pelvic elevation unilateral -->
+          <div class="pelvic-card">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xl">🌸</span>
+              <div><p class="font-bold text-white text-sm">Elevação Pélvica Unilateral</p><p class="text-xs text-pink-300">Glúteo máximo · Assoalho pélvico · Assimetria</p></div>
+            </div>
+            <div class="ex-sets mb-2"><span class="ex-set-pill">3 séries</span><span class="ex-set-pill">12/lado</span><span class="ex-set-pill">Sem apoio</span></div>
+            <div class="ex-tip">🌸 Deitada, uma perna estendida. Suba o quadril com a perna dobrada, mantendo a outra no ar. Contraia o assoalho pélvico no topo. Corrige desequilíbrios e esculpe o glúteo unilateralmente.</div>
+          </div>
+
+          <!-- Sumo Squat -->
+          <div class="ex-card">
+            <div class="ex-img-wrap">
+              <img src="https://images.unsplash.com/photo-1579758629938-03607ccdbaba?w=500&q=80" alt="Agachamento Sumo" loading="lazy"/>
+              <div class="ex-img-overlay"></div>
+              <span class="ex-img-badge"><span class="badge badge-hiit">Interno</span></span>
+              <span class="ex-img-muscle">Glúteo médio · Adutores</span>
+            </div>
+            <div class="ex-body">
+              <p class="font-bold text-white">Agachamento Sumo</p>
+              <p class="text-xs text-purple-300">Glúteo médio · Adutores · Coxa interna</p>
+              <div class="ex-sets"><span class="ex-set-pill">4 séries</span><span class="ex-set-pill">12 reps</span></div>
+              <div class="ex-tip">💡 Pés muito abertos, pontas para fora. Desça devagar, joelhos alinhados com os dedos. Ideal para modelar a coxa interna e glúteo médio.</div>
+            </div>
+          </div>
+
+          <div class="ex-card">
+            <div class="ex-img-wrap">
+              <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=500&q=80" alt="Leg Press" loading="lazy"/>
+              <div class="ex-img-overlay"></div>
+              <span class="ex-img-badge"><span class="badge badge-success">Máquina</span></span>
+              <span class="ex-img-muscle">Quadríceps · Glúteo</span>
+            </div>
+            <div class="ex-body">
+              <p class="font-bold text-white">Leg Press 45°</p>
+              <p class="text-xs text-purple-300">Quadríceps · Glúteo — pés altos para mais glúteo</p>
+              <div class="ex-sets"><span class="ex-set-pill">4 séries</span><span class="ex-set-pill">12 reps</span></div>
+              <div class="ex-tip">💡 Posicione os pés mais altos na plataforma para aumentar o recrutamento do glúteo. Desça até 90° ou além.</div>
+            </div>
+          </div>
+
+          <p class="section-title mt-2">🏋️ Superior A — Costas & Ombros</p>
+          <div class="ex-card">
+            <div class="ex-img-wrap">
+              <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&q=80" alt="Puxada" loading="lazy"/>
+              <div class="ex-img-overlay"></div>
+              <span class="ex-img-badge"><span class="badge badge-science">Costas</span></span>
+              <span class="ex-img-muscle">Dorsal · Bíceps</span>
+            </div>
+            <div class="ex-body">
+              <p class="font-bold text-white">Puxada Frontal (Pulley)</p>
+              <p class="text-xs text-purple-300">Dorsal · Bíceps · Postura</p>
+              <div class="ex-sets"><span class="ex-set-pill">4 séries</span><span class="ex-set-pill">10 reps</span></div>
+              <div class="ex-tip">💡 Puxe a barra até o queixo. Cotovelos apontando para baixo. Essencial para definição de costas e postura ereta.</div>
+              <div class="ex-safe-tag">✅ Seguro com implantes — sem pressão peitoral</div>
+            </div>
+          </div>
+
+          <div class="ex-card">
+            <div class="ex-img-wrap">
+              <img src="https://images.unsplash.com/photo-1598971639058-fab3c3109a00?w=500&q=80" alt="Elástico" loading="lazy"/>
+              <div class="ex-img-overlay"></div>
+              <span class="ex-img-badge"><span class="badge badge-success">Elástico</span></span>
+              <span class="ex-img-muscle">Glúteo médio · Coxa externa</span>
+            </div>
+            <div class="ex-body">
+              <p class="font-bold text-white">Abdução com Elástico</p>
+              <p class="text-xs text-purple-300">Glúteo médio · Tensor fáscia lata · Coxa externa</p>
+              <div class="ex-sets"><span class="ex-set-pill">3 séries</span><span class="ex-set-pill">25 reps</span></div>
+              <div class="ex-tip">💡 Elástico acima dos joelhos. Pés na largura dos ombros, agachamento parcial. Abra os joelhos contra a resistência. Queima o glúteo médio!</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ── FASE 3 ── -->
+    <div class="card glass mb-3">
+      <div class="phase-header" onclick="togglePhase('fase3')">
+        <div>
+          <div class="flex items-center gap-2 mb-1"><span class="week-pill phase-3">Semanas 9–12</span><span class="badge badge-warning">Definição</span></div>
+          <h3 class="font-bold text-white">Fase 3 — Definição & Especialização</h3>
+          <p class="text-xs text-purple-300 mt-1">4x/semana · ABCD · 4–5 séries · 6–15 reps ondulatório</p>
+        </div>
+        <span class="chevron" id="chevron-fase3">▾</span>
+      </div>
+      <div class="phase-body" id="fase3">
+        <div class="mt-4">
+          <div class="grid grid-cols-4 gap-2 mb-4 text-center text-xs">
+            <div class="glass-dark rounded-xl p-2"><p class="font-bold text-purple-300">SEG</p><p class="text-white">A: Glúteo</p></div>
+            <div class="glass-dark rounded-xl p-2"><p class="font-bold text-pink-300">TER</p><p class="text-white">B: Costas</p></div>
+            <div class="glass-dark rounded-xl p-2"><p class="font-bold text-orange-300">QUI</p><p class="text-white">C: Posterior</p></div>
+            <div class="glass-dark rounded-xl p-2"><p class="font-bold text-cyan-300">SEX</p><p class="text-white">D: Core+Peito</p></div>
+          </div>
+
+          <p class="section-title">🍑 Dia A — Glúteo Especializado + Pélvis</p>
+
+          <div class="ex-card">
+            <div class="ex-img-wrap">
+              <img src="https://images.unsplash.com/photo-1604480132736-44c188fe4d20?w=500&q=80" alt="Hip Thrust Heavy" loading="lazy"/>
+              <div class="ex-img-overlay"></div>
+              <span class="ex-img-badge"><span class="badge badge-warning">Heavy</span></span>
+              <span class="ex-img-muscle">Glúteo Máximo — Carga máxima</span>
+            </div>
+            <div class="ex-body">
+              <p class="font-bold text-white">Hip Thrust com Barra (Heavy)</p>
+              <p class="text-xs text-purple-300">Glúteo máximo · Máxima carga · Escultura final</p>
+              <div class="ex-sets"><span class="ex-set-pill">5 séries</span><span class="ex-set-pill">8 reps</span><span class="ex-set-pill">Carga máxima</span></div>
+              <div class="ex-tip">💡 Fase de especialização — use a maior carga que consegue manter a técnica. Pausa de 1s no topo em cada repetição.</div>
+            </div>
+          </div>
+
+          <!-- Pelvic Tilt + Kegel Advanced -->
+          <div class="pelvic-card">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xl">🌸</span>
+              <div><p class="font-bold text-white text-sm">Sequência Pélvica Avançada</p><p class="text-xs text-pink-300">Assoalho pélvico · Core profundo · Escultura abdominal</p></div>
+            </div>
+            <div class="space-y-2 mt-2">
+              <div class="ex-tip">1️⃣ <strong>Kegel Rápido:</strong> Contraia e relaxe o assoalho pélvico rapidamente — 20 reps × 3 séries</div>
+              <div class="ex-tip">2️⃣ <strong>Kegel Sustentado:</strong> Contraia por 10s, relaxe 5s — 10 reps × 3 séries</div>
+              <div class="ex-tip">3️⃣ <strong>Ponte Pélvica com Kegel:</strong> Suba o quadril + contraia pélvico + segure 5s — 12 reps × 3 séries</div>
+              <div class="ex-tip">🌸 Benefícios: fortalece o core profundo, melhora a postura, reduz a barriga baixa, esculpe o abdômen inferior e melhora a função sexual.</div>
+            </div>
+          </div>
+
+          <div class="ex-card">
+            <div class="ex-img-wrap">
+              <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&q=80" alt="Afundo Bulgaro" loading="lazy"/>
+              <div class="ex-img-overlay"></div>
+              <span class="ex-img-badge"><span class="badge badge-warning">Avançado</span></span>
+              <span class="ex-img-muscle">Glúteo · Quadríceps</span>
+            </div>
+            <div class="ex-body">
+              <p class="font-bold text-white">Agachamento Búlgaro</p>
+              <p class="text-xs text-purple-300">Glúteo · Quadríceps · Equilíbrio avançado</p>
+              <div class="ex-sets"><span class="ex-set-pill">4 séries</span><span class="ex-set-pill">10/lado</span></div>
+              <div class="ex-tip">💡 Pé traseiro no banco. Desça o joelho traseiro até quase tocar o chão. Empurre pela perna da frente. Exercício mais desafiador para glúteo unilateral.</div>
+            </div>
+          </div>
+
+          <!-- Sculpting -->
+          <div class="sculpt-card">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xl">✨</span>
+              <div><p class="font-bold text-white text-sm">Circuito de Escultura Final</p><p class="text-xs text-orange-300">Burn · Definição · Sem descanso entre exercícios</p></div>
+            </div>
+            <div class="space-y-2">
+              <div class="ex-tip">🔥 <strong>Kick Back (Cabo):</strong> 4×15/lado — extensão do quadril isolada</div>
+              <div class="ex-tip">🔥 <strong>Abdução Deitada (Elástico):</strong> 3×25 — glúteo médio queimando</div>
+              <div class="ex-tip">🔥 <strong>Agachamento Sumo Pulsado:</strong> 3×20 — coxa interna e glúteo</div>
+              <div class="ex-tip">🔥 <strong>Pallof Press:</strong> 4×12/lado — oblíquos, flancos e cintura</div>
+              <div class="ex-tip">⏱ Descanse apenas 30s entre exercícios. Circuito metabólico para definição máxima.</div>
+            </div>
+          </div>
+
+          <p class="section-title mt-2">🎯 Dia D — Core, Cintura & Peitoral Seguro</p>
+          <div class="ex-card">
+            <div class="ex-img-wrap">
+              <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=500&q=80" alt="Core" loading="lazy"/>
+              <div class="ex-img-overlay"></div>
+              <span class="ex-img-badge"><span class="badge badge-science">Core</span></span>
+              <span class="ex-img-muscle">Core · Oblíquos · Cintura</span>
+            </div>
+            <div class="ex-body">
+              <p class="font-bold text-white">Prancha com Rotação + Pallof Press</p>
+              <p class="text-xs text-purple-300">Oblíquos · Flancos · Cintura · Definição lateral</p>
+              <div class="ex-sets"><span class="ex-set-pill">4 séries</span><span class="ex-set-pill">12/lado</span></div>
+              <div class="ex-tip">💡 Anti-rotação é a chave para esculpir flancos e cintura. Pallof Press: segure o cabo na frente do peito, resista à rotação por 3s.</div>
+              <div class="ex-safe-tag">✅ Seguro com implantes — sem carga peitoral</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Safety tips -->
+    <div class="card glass">
+      <h3 class="font-bold text-white mb-3 text-base">🔥 Aquecimento & Segurança</h3>
+      <div class="space-y-2">
+        <div class="flex gap-3 items-start py-2 border-b border-white border-opacity-5"><div class="tip-number">1</div><div><p class="text-sm font-semibold text-white">5–10 min aquecimento dinâmico</p><p class="text-xs text-purple-300">Mobilidade de quadril, círculos pélvicos, agachamento sem peso</p></div></div>
+        <div class="flex gap-3 items-start py-2 border-b border-white border-opacity-5"><div class="tip-number">2</div><div><p class="text-sm font-semibold text-white">Sobrecarga progressiva</p><p class="text-xs text-purple-300">Aumente carga só quando completar todas as séries/reps com boa técnica</p></div></div>
+        <div class="flex gap-3 items-start py-2 border-b border-white border-opacity-5"><div class="tip-number">3</div><div><p class="text-sm font-semibold text-white">Descanso entre séries</p><p class="text-xs text-purple-300">60–90s isolamento · 2–3min compostos pesados</p></div></div>
+        <div class="flex gap-3 items-start py-2"><div class="tip-number">4</div><div><p class="text-sm font-semibold text-white">Proteína pós-treino</p><p class="text-xs text-purple-300">20–30g proteína em até 2h após treino para síntese proteica ideal</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ CARDIO ══ -->
+<section id="tab-cardio" class="section scroll-area px-4">
+  <div class="header-safe">
+    <h2 class="text-xl font-bold gradient-text mb-1">🏃‍♀️ Protocolos de Cardio</h2>
+    <p class="text-xs text-purple-300 mb-4">HIIT + LISS · Baseado em Ensaios Clínicos Randomizados</p>
+
+    <div class="card glass mb-4" style="background:linear-gradient(135deg,rgba(124,58,237,0.18),rgba(236,72,153,0.12))">
+      <span class="badge badge-science mb-2 inline-block">🔬 Meta-análise</span>
+      <p class="text-sm text-purple-100 leading-relaxed">HIIT a ≥85–95% FCmáx produziu maior redução de gordura visceral e abdominal vs MICT em múltiplos RCTs com mulheres (8–12 semanas). Combinação RT + HIIT preserva massa magra enquanto reduz gordura abdominal.</p>
+    </div>
+
+    <!-- Plano Semanal -->
+    <div class="card glass mb-4">
+      <h3 class="font-bold text-white mb-3 text-base">📅 Semana Tipo</h3>
+      <div class="grid grid-cols-7 gap-1 text-center text-xs mb-2">
+        <div class="glass-dark rounded-lg p-2"><p class="font-bold text-purple-300">SEG</p><p class="text-white text-xs">Treino</p></div>
+        <div class="hiit-block rounded-lg p-2" style="margin:0"><p class="font-bold text-pink-300">TER</p><p class="text-white text-xs">HIIT 4×4</p></div>
+        <div class="glass-dark rounded-lg p-2"><p class="font-bold text-purple-300">QUA</p><p class="text-white text-xs">Treino</p></div>
+        <div class="liss-block rounded-lg p-2" style="margin:0"><p class="font-bold text-cyan-300">QUI</p><p class="text-white text-xs">LISS 35'</p></div>
+        <div class="glass-dark rounded-lg p-2"><p class="font-bold text-purple-300">SEX</p><p class="text-white text-xs">Treino</p></div>
+        <div class="hiit-block rounded-lg p-2" style="margin:0"><p class="font-bold text-pink-300">SAB</p><p class="text-white text-xs">HIIT SIT</p></div>
+        <div class="glass-dark rounded-lg p-2 opacity-50"><p class="font-bold text-gray-400">DOM</p><p class="text-gray-400 text-xs">Descanso</p></div>
+      </div>
+    </div>
+
+    <!-- Imagem do Cardio -->
+    <div class="ex-card mb-4">
+      <div class="ex-img-wrap" style="height:180px">
+        <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=600&q=80" alt="Cardio corrida" loading="lazy"/>
+        <div class="ex-img-overlay"></div>
+        <div style="position:absolute;bottom:14px;left:14px;right:14px">
+          <p class="font-bold text-white text-base">Cardio Científico</p>
+          <p class="text-xs text-pink-300">HIIT 4×4 · SIT · LISS — protocolos dos RCTs</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- HIIT 4x4 -->
+    <div class="hiit-block">
+      <div class="flex items-center gap-2 mb-3"><span class="badge badge-hiit">HIIT Principal</span><span class="text-xs text-orange-300 font-bold">4×4 Protocol</span></div>
+      <h3 class="font-bold text-white text-base mb-3">🔥 HIIT 4×4 — Gordura Visceral</h3>
+      <div class="space-y-2">
+        <div class="flex justify-between items-center py-2 border-b border-white border-opacity-10"><div><p class="text-sm font-semibold text-white">Aquecimento</p><p class="text-xs text-orange-300">Caminhada/trote leve</p></div><span class="badge badge-warning">10 min</span></div>
+        <div class="flex justify-between items-center py-2 border-b border-white border-opacity-10"><div><p class="text-sm font-semibold text-white">Bloco de Intervalo</p><p class="text-xs text-pink-300">85–95% FCmáx · Corrida/bike intensa</p></div><span class="badge badge-hiit">4 min</span></div>
+        <div class="flex justify-between items-center py-2 border-b border-white border-opacity-10"><div><p class="text-sm font-semibold text-white">Recuperação Ativa</p><p class="text-xs text-purple-300">Caminhada moderada</p></div><span class="badge badge-science">3 min</span></div>
+        <div class="flex justify-between items-center py-2 border-b border-white border-opacity-10"><div><p class="text-sm font-semibold text-white">Repetir ×4 ciclos</p><p class="text-xs text-pink-300">4 blocos de 4min + 3min recuperação</p></div><span class="badge badge-hiit">28 min</span></div>
+        <div class="flex justify-between items-center py-2"><div><p class="text-sm font-semibold text-white">Desaquecimento</p></div><span class="badge badge-success">5 min</span></div>
+      </div>
+      <div class="mt-3 p-3 rounded-xl" style="background:rgba(0,0,0,0.2)"><p class="text-xs text-orange-200">🎯 <strong>Total: ~43 min</strong> · FCmáx = 220 - 34 = 186 bpm · 85% = ~158 bpm · 95% = ~177 bpm</p></div>
+    </div>
+
+    <!-- HIIT SIT -->
+    <div class="hiit-block">
+      <div class="flex items-center gap-2 mb-3"><span class="badge badge-hiit">HIIT Curto</span><span class="text-xs text-orange-300 font-bold">SIT Protocol</span></div>
+      <h3 class="font-bold text-white text-base mb-3">⚡ HIIT SIT — Máxima Eficiência</h3>
+      <div class="space-y-2">
+        <div class="flex justify-between items-center py-2 border-b border-white border-opacity-10"><div><p class="text-sm font-semibold text-white">Aquecimento</p></div><span class="badge badge-warning">8 min</span></div>
+        <div class="flex justify-between items-center py-2 border-b border-white border-opacity-10"><div><p class="text-sm font-semibold text-white">Sprint máximo</p><p class="text-xs text-pink-300">100%+ esforço · Bike/corrida/elíptico</p></div><span class="badge badge-hiit">20–30s</span></div>
+        <div class="flex justify-between items-center py-2 border-b border-white border-opacity-10"><div><p class="text-sm font-semibold text-white">Recuperação passiva/ativa</p></div><span class="badge badge-science">90–120s</span></div>
+        <div class="flex justify-between items-center py-2"><div><p class="text-sm font-semibold text-white">Repetir 6–10 ciclos</p></div><span class="badge badge-hiit">~25 min</span></div>
+      </div>
+      <div class="mt-3 p-3 rounded-xl" style="background:rgba(0,0,0,0.2)"><p class="text-xs text-orange-200">🎯 Estudos mostram perda visceral IGUAL ou MAIOR ao MICT em menos tempo</p></div>
+    </div>
+
+    <!-- LISS -->
+    <div class="liss-block">
+      <div class="flex items-center gap-2 mb-3"><span class="badge badge-science">LISS</span><span class="text-xs text-cyan-300 font-bold">Steady State</span></div>
+      <h3 class="font-bold text-white text-base mb-3">🚶‍♀️ LISS — Recuperação Ativa</h3>
+      <div class="space-y-2">
+        <div class="flex justify-between items-center py-2 border-b border-white border-opacity-10"><div><p class="text-sm font-semibold text-white">Modalidade</p><p class="text-xs text-cyan-300">Caminhada rápida, bike suave, elíptico</p></div><span class="badge badge-success">Baixo impacto</span></div>
+        <div class="flex justify-between items-center py-2 border-b border-white border-opacity-10"><div><p class="text-sm font-semibold text-white">Intensidade</p><p class="text-xs text-cyan-300">55–70% FCmáx = 102–130 bpm</p></div><span class="badge badge-success">Zona 2</span></div>
+        <div class="flex justify-between items-center py-2"><div><p class="text-sm font-semibold text-white">Duração</p></div><span class="badge badge-success">30–40 min</span></div>
+      </div>
+      <div class="mt-3 p-3 rounded-xl" style="background:rgba(0,0,0,0.2)"><p class="text-xs text-cyan-200">💡 LISS auxilia na circulação periférica — benéfico para redução de celulite nos membros inferiores.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ MEDIDAS ══ -->
+<section id="tab-medidas" class="section scroll-area px-4">
+  <div class="header-safe">
+    <h2 class="text-xl font-bold gradient-text mb-1">📏 Tracker de Medidas</h2>
+    <p class="text-xs text-purple-300 mb-4">Registre a cada 2 semanas para acompanhar a recomposição</p>
+
+    <div class="card glass mb-4">
+      <h3 class="font-bold text-white mb-3 text-base">➕ Registrar Medidas</h3>
+      <div class="grid grid-cols-2 gap-3 mb-3">
+        <div><label class="text-xs text-purple-300 mb-1 block">Data</label><input type="date" id="measureDate"/></div>
+        <div><label class="text-xs text-purple-300 mb-1 block">Cintura (cm)</label><input type="number" id="measureWaist" placeholder="Ex: 82" step="0.5"/></div>
+        <div><label class="text-xs text-purple-300 mb-1 block">Quadril (cm)</label><input type="number" id="measureHip" placeholder="Ex: 105" step="0.5"/></div>
+        <div><label class="text-xs text-purple-300 mb-1 block">Flancos (cm)</label><input type="number" id="measureFlanks" placeholder="Ex: 95" step="0.5"/></div>
+        <div><label class="text-xs text-purple-300 mb-1 block">Coxa D (cm)</label><input type="number" id="measureThigh" placeholder="Ex: 62" step="0.5"/></div>
+        <div><label class="text-xs text-purple-300 mb-1 block">Braço D (cm)</label><input type="number" id="measureArm" placeholder="Ex: 32" step="0.5"/></div>
+      </div>
+      <button class="btn-primary" onclick="addMeasureEntry()">Salvar Medidas ✓</button>
+    </div>
+
+    <div class="card glass mb-4">
+      <h3 class="font-bold text-white mb-3 text-base">📊 Última vs Anterior</h3>
+      <div id="measureCompare"><p class="text-sm text-purple-300 text-center py-4">Registre pelo menos 2 medições para comparar 📐</p></div>
+    </div>
+
+    <div class="card glass mb-4">
+      <h3 class="font-bold text-white mb-3 text-base">📉 Evolução da Cintura</h3>
+      <div class="chart-wrap"><canvas id="waistChart"></canvas></div>
+    </div>
+
+    <div class="card glass mb-4">
+      <h3 class="font-bold text-white mb-3 text-base">🗂 Histórico</h3>
+      <div id="measureHistory"><p class="text-sm text-purple-300 text-center py-4">Nenhuma medida registrada ainda 📏</p></div>
+      <button onclick="clearMeasures()" class="text-xs text-red-400 mt-2 w-full text-center opacity-60">Limpar medidas</button>
+    </div>
+
+    <!-- Implant safety -->
+    <div class="alert-card">
+      <div class="flex items-center gap-2 mb-3"><span class="text-xl">⚠️</span><h3 class="font-bold text-orange-200 text-base">Segurança — Implantes 270ml</h3></div>
+      <div class="space-y-3">
+        <div class="flex gap-3 items-start"><div class="dot-ok"></div><div><p class="text-sm font-semibold text-green-300">LIBERADO com progressão</p><p class="text-xs text-green-200">Crucifixo leve, supino com halteres leves — carga controlada, ROM parcial</p></div></div>
+        <div class="flex gap-3 items-start"><div class="dot-warn"></div><div><p class="text-sm font-semibold text-orange-300">ATENÇÃO — Progressão lenta</p><p class="text-xs text-orange-200">Supino barra pesado — iniciar com carga mínima, progredir ao longo de semanas</p></div></div>
+        <div class="flex gap-3 items-start"><div class="dot-stop"></div><div><p class="text-sm font-semibold text-red-300">PARAR se sentir</p><p class="text-xs text-red-200">Dor, assimetria, endurecimento — consultar cirurgião imediatamente</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ NUTRIÇÃO ══ -->
+<section id="tab-nutricao" class="section scroll-area px-4">
+  <div class="header-safe">
+    <h2 class="text-xl font-bold gradient-text mb-1">🚫 Alimentos Proibidos</h2>
+    <p class="text-xs text-purple-300 mb-4">O que ATRASA sua recomposição corporal — evite ao máximo</p>
+
+    <!-- Warning banner -->
+    <div class="alert-card mb-4">
+      <div class="flex items-center gap-2 mb-2"><span class="text-xl">⚠️</span><p class="font-bold text-orange-200 text-sm">Por que esses alimentos sabotam os resultados?</p></div>
+      <p class="text-xs text-orange-100 leading-relaxed">Esses alimentos aumentam inflamação, retêm líquido, elevam cortisol, bloqueiam a síntese proteica e estimulam o acúmulo de gordura visceral — exatamente o oposto do que precisamos para recomposição corporal.</p>
+    </div>
+
+    <!-- AÇÚCAR -->
+    <div class="food-card">
+      <img class="food-img" src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=600&q=80" alt="Açúcar" loading="lazy"/>
+      <div class="food-overlay"></div>
+      <span class="food-danger"><span class="danger-level-3">🚫 EVITAR SEMPRE</span></span>
+      <div class="food-content">
+        <p class="font-bold text-white text-base">Açúcar Refinado & Doces</p>
+        <p class="text-xs text-red-300 mb-1">Açúcar branco, mel em excesso, balas, chocolates ao leite</p>
+        <p class="text-xs text-gray-300">Pico de insulina → acúmulo de gordura visceral → inflamação → bloqueia lipólise</p>
+      </div>
+    </div>
+
+    <!-- FAST FOOD -->
+    <div class="food-card">
+      <img class="food-img" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80" alt="Fast Food" loading="lazy"/>
+      <div class="food-overlay"></div>
+      <span class="food-danger"><span class="danger-level-3">🚫 EVITAR SEMPRE</span></span>
+      <div class="food-content">
+        <p class="font-bold text-white text-base">Fast Food & Frituras</p>
+        <p class="text-xs text-red-300 mb-1">Hambúrguer, batata frita, nuggets, pizza congelada</p>
+        <p class="text-xs text-gray-300">Gordura trans + sódio em excesso → retenção de líquido → inflamação crônica → celulite</p>
+      </div>
+    </div>
+
+    <!-- REFRIGERANTE -->
+    <div class="food-card">
+      <img class="food-img" src="https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=600&q=80" alt="Refrigerante" loading="lazy"/>
+      <div class="food-overlay"></div>
+      <span class="food-danger"><span class="danger-level-3">🚫 EVITAR SEMPRE</span></span>
+      <div class="food-content">
+        <p class="font-bold text-white text-base">Refrigerantes & Sucos Industriais</p>
+        <p class="text-xs text-red-300 mb-1">Coca-cola, Pepsi, sucos de caixinha, energéticos</p>
+        <p class="text-xs text-gray-300">~40g açúcar por lata → pico insulínico → gordura abdominal + retenção de sódio</p>
+      </div>
+    </div>
+
+    <!-- ULTRAPROCESSADOS -->
+    <div class="food-card">
+      <img class="food-img" src="https://images.unsplash.com/photo-1555072956-7758afb20e8f?w=600&q=80" alt="Ultraprocessados" loading="lazy"/>
+      <div class="food-overlay"></div>
+      <span class="food-danger"><span class="danger-level-3">🚫 EVITAR SEMPRE</span></span>
+      <div class="food-content">
+        <p class="font-bold text-white text-base">Ultraprocessados em Geral</p>
+        <p class="text-xs text-red-300 mb-1">Salgadinhos, biscoitos recheados, macarrão instantâneo</p>
+        <p class="text-xs text-gray-300">Aditivos inflamatórios + calorias vazias + ausência de nutrientes → sabotam a síntese proteica</p>
+      </div>
+    </div>
+
+    <!-- CHIPS -->
+    <div class="food-card">
+      <img class="food-img" src="https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=600&q=80" alt="Salgadinhos" loading="lazy"/>
+      <div class="food-overlay"></div>
+      <span class="food-danger"><span class="danger-level-3">🚫 EVITAR SEMPRE</span></span>
+      <div class="food-content">
+        <p class="font-bold text-white text-base">Salgadinhos & Snacks Industriais</p>
+        <p class="text-xs text-red-300 mb-1">Chips, ruffles, doritos, amendoim salgado industrial</p>
+        <p class="text-xs text-gray-300">Alto sódio → retenção de líquido → piora celulite + inchaço nas pernas e flancos</p>
+      </div>
+    </div>
+
+    <!-- ÁLCOOL -->
+    <div class="food-card">
+      <img class="food-img" src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=80" alt="Álcool" loading="lazy"/>
+      <div class="food-overlay"></div>
+      <span class="food-danger"><span class="danger-level-2">⚠️ REDUZIR MUITO</span></span>
+      <div class="food-content">
+        <p class="font-bold text-white text-base">Álcool (Cerveja, Vinho, Destilados)</p>
+        <p class="text-xs text-orange-300 mb-1">Cerveja, caipirinha, vinho em excesso</p>
+        <p class="text-xs text-gray-300">Bloqueia síntese proteica por 24–36h → prejudica recuperação muscular → aumenta cortisol</p>
+      </div>
+    </div>
+
+    <!-- PÃO BRANCO -->
+    <div class="food-card">
+      <img class="food-img" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80" alt="Pão branco" loading="lazy"/>
+      <div class="food-overlay"></div>
+      <span class="food-danger"><span class="danger-level-2">⚠️ REDUZIR</span></span>
+      <div class="food-content">
+        <p class="font-bold text-white text-base">Farinhas Brancas & Pão Refinado</p>
+        <p class="text-xs text-orange-300 mb-1">Pão francês, macarrão branco, arroz branco em excesso</p>
+        <p class="text-xs text-gray-300">Alto índice glicêmico → pico de insulina → favorece acúmulo de gordura. Substituir por versões integrais.</p>
+      </div>
+    </div>
+
+    <!-- SORVETE -->
+    <div class="food-card">
+      <img class="food-img" src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=600&q=80" alt="Sorvete" loading="lazy"/>
+      <div class="food-overlay"></div>
+      <span class="food-danger"><span class="danger-level-2">⚠️ REDUZIR</span></span>
+      <div class="food-content">
+        <p class="font-bold text-white text-base">Sorvetes & Sobremesas Industriais</p>
+        <p class="text-xs text-orange-300 mb-1">Sorvete cremoso, tortas, pudins, achocolatados</p>
+        <p class="text-xs text-gray-300">Açúcar + gordura saturada + corantes → combo inflamatório que piora celulite e retenção</p>
+      </div>
+    </div>
+
+    <!-- Tips -->
+    <div class="card glass mt-2">
+      <h3 class="font-bold text-white mb-3 text-base">✅ O que ACELERA os resultados</h3>
+      <div class="space-y-2">
+        <div class="flex gap-3 items-center py-2 border-b border-white border-opacity-5">
+          <span class="text-lg">🥩</span>
+          <div><p class="text-sm font-semibold text-white">Proteína de qualidade</p><p class="text-xs text-green-300">Frango, peixe, ovos, whey, cottage — 1,6–2,2g/kg/dia</p></div>
+        </div>
+        <div class="flex gap-3 items-center py-2 border-b border-white border-opacity-5">
+          <span class="text-lg">🥦</span>
+          <div><p class="text-sm font-semibold text-white">Vegetais anti-inflamatórios</p><p class="text-xs text-green-300">Brócolis, espinafre, couve, abacate — reduzem inflamação e celulite</p></div>
+        </div>
+        <div class="flex gap-3 items-center py-2 border-b border-white border-opacity-5">
+          <span class="text-lg">💧</span>
+          <div><p class="text-sm font-semibold text-white">Hidratação — 35ml/kg/dia</p><p class="text-xs text-green-300">Para 80kg = ~2,8L/dia. Reduz retenção e melhora aparência da pele</p></div>
+        </div>
+        <div class="flex gap-3 items-center py-2">
+          <span class="text-lg">🍠</span>
+          <div><p class="text-sm font-semibold text-white">Carboidratos complexos</p><p class="text-xs text-green-300">Batata doce, arroz integral, aveia — energia sustentada sem pico de insulina</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ CIÊNCIA ══ -->
+<section id="tab-ciencia" class="section scroll-area px-4">
+  <div class="header-safe">
+    <h2 class="text-xl font-bold gradient-text mb-1">🔬 Base Científica</h2>
+    <p class="text-xs text-purple-300 mb-4">344 estudos analisados · 4 buscas sistemáticas</p>
+
+    <div class="card glass mb-4" style="background:linear-gradient(135deg,rgba(124,58,237,0.2),rgba(236,72,153,0.15))">
+      <span class="badge badge-science mb-2 inline-block">TL;DR</span>
+      <p class="text-sm text-purple-100 leading-relaxed font-medium">Programa ondulatório de 12 semanas com sobrecarga progressiva + HIIT (≥2×/sem) produz os melhores sinais de recomposição corporal. Segurança com implantes: evitar carga peitoral agressiva. Celulite: enfatizar glúteo com força. Assoalho pélvico: treinar junto com glúteo para escultura total.</p>
+    </div>
+
+    <div class="card glass mb-3">
+      <span class="badge badge-science mb-2 inline-block">Periodização</span>
+      <h3 class="font-bold text-white text-base mb-2">📐 Recomposição Corporal Feminina</h3>
+      <ul class="space-y-2 text-sm text-purple-100">
+        <li class="flex gap-2"><span class="text-purple-400">▸</span>Programas ondulatórios produziram ganhos significativos de massa livre de gordura e força em mulheres treinadas em 8 semanas</li>
+        <li class="flex gap-2"><span class="text-purple-400">▸</span>Frequência efetiva: 3 sessões/semana inicialmente, progredindo para 4×/semana na fase de hipertrofia</li>
+        <li class="flex gap-2"><span class="text-purple-400">▸</span>Macrostrutura ideal: 3 mesociclos de 4 semanas (base → intensificação → especialização)</li>
+      </ul>
+    </div>
+
+    <div class="card glass mb-3">
+      <span class="badge badge-hiit mb-2 inline-block">HIIT vs LISS</span>
+      <h3 class="font-bold text-white text-base mb-2">🔥 Cardio para Gordura Visceral</h3>
+      <ul class="space-y-2 text-sm text-purple-100">
+        <li class="flex gap-2"><span class="text-pink-400">▸</span>HIIT a ≥85–90% FCmáx produziu maior redução de gordura visceral e abdominal vs MICT em RCTs (8–12 semanas)</li>
+        <li class="flex gap-2"><span class="text-pink-400">▸</span>Protocolo 4×4: 4 blocos de 4min a 85–95% FCmáx com 3min recuperação ativa — comprovado para gordura visceral</li>
+        <li class="flex gap-2"><span class="text-pink-400">▸</span>RT + HIIT preserva/aumenta % massa magra enquanto reduz gordura abdominal</li>
+      </ul>
+    </div>
+
+    <div class="card glass mb-3">
+      <span class="badge badge-warning mb-2 inline-block">Celulite</span>
+      <h3 class="font-bold text-white text-base mb-2">🍑 Membros Inferiores & Celulite</h3>
+      <ul class="space-y-2 text-sm text-purple-100">
+        <li class="flex gap-2"><span class="text-orange-400">▸</span>Fortalecimento glúteo + ondas de choque (ESWT) produziu maior redução de grau de celulite vs ESWT isolado em RCT</li>
+        <li class="flex gap-2"><span class="text-orange-400">▸</span>RT progressivo consistentemente reduz % gordura corporal e circunferências em 8–12 semanas</li>
+        <li class="flex gap-2"><span class="text-orange-400">▸</span>Músculos prioritários: glúteo máximo, glúteo médio, isquiotibiais, quadríceps</li>
+      </ul>
+    </div>
+
+    <div class="card glass mb-3">
+      <span class="badge badge-success mb-2 inline-block">Assoalho Pélvico</span>
+      <h3 class="font-bold text-white text-base mb-2">🌸 Pélvis & Core Profundo</h3>
+      <ul class="space-y-2 text-sm text-purple-100">
+        <li class="flex gap-2"><span class="text-green-400">▸</span>Exercícios de Kegel combinados com ativação glútea fortalecem o core profundo e melhoram a postura</li>
+        <li class="flex gap-2"><span class="text-green-400">▸</span>Elevação pélvica com contração do assoalho pélvico ativa transverso abdominal — reduz barriga baixa</li>
+        <li class="flex gap-2"><span class="text-green-400">▸</span>Treinamento pélvico melhora estabilidade lombar e reduz risco de lesão durante exercícios pesados</li>
+      </ul>
+    </div>
+
+    <div class="card glass mb-4">
+      <h3 class="font-bold text-white mb-3 text-base">📚 Referências</h3>
+      <div class="science-ref">[1] Undulating resistance program in trained women — Fat-free mass and strength gains (8-week RCT)</div>
+      <div class="science-ref">[2] 3×/week combined RT/HIIT programs in women — Effective frequency for body composition</div>
+      <div class="science-ref">[4] RT + HIIT — Preserved/increased muscle mass % with abdominal fat reduction (RCT women)</div>
+      <div class="science-ref">[11] HIIT/SIT vs MICT — Greater visceral and abdominal fat loss in women (multiple RCTs)</div>
+      <div class="science-ref">[12] 4×4 HIIT protocol — 3×/week, 12 weeks, visceral/subcutaneous fat reduction in women</div>
+      <div class="science-ref">[15] Exercise-based cellulite treatment — Limited heterogeneous evidence (systematic review)</div>
+      <div class="science-ref">[16] Gluteal strengthening + ESWT — Greater cellulite grade reduction vs ESWT alone (controlled trial)</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ NOTIF MODAL ══ -->
+<div class="notif-modal-overlay" id="notifOverlay" onclick="closeNotifModal(event)">
+  <div class="notif-modal">
+    <div class="notif-drag-handle"></div>
+    <div class="flex items-center justify-between mb-4">
+      <h2 class="font-bold text-white text-lg">🔔 Lembretes & Sincronização</h2>
+      <button onclick="closeSettings()" style="background:none;border:none;color:rgba(255,255,255,0.5);font-size:22px;cursor:pointer">✕</button>
+    </div>
+
+    <!-- Permission banner -->
+    <div class="perm-banner" id="permBanner">
+      <span style="font-size:24px">🔔</span>
+      <div style="flex:1">
+        <p class="text-sm font-bold text-white">Ativar notificações</p>
+        <p style="font-size:11px;color:rgba(255,255,255,0.6)">Receba lembretes de treino e refeição</p>
+      </div>
+      <button class="perm-btn" onclick="requestNotifPermission()">Ativar</button>
+    </div>
+
+    <!-- Workout reminder -->
+    <div class="notif-row">
+      <div>
+        <p class="notif-label">🏋️ Lembrete de Treino</p>
+        <p class="notif-sublabel">Diário nos dias de treino</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <input type="time" id="workoutTime" class="notif-time-input" value="07:00">
+        <label class="toggle-switch">
+          <input type="checkbox" id="toggleWorkout" onchange="saveNotifSettings()">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Meal reminders -->
+    <div class="notif-row">
+      <div>
+        <p class="notif-label">🥗 Café da Manhã</p>
+        <p class="notif-sublabel">Proteína + carboidrato complexo</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <input type="time" id="mealBreakfast" class="notif-time-input" value="07:30">
+        <label class="toggle-switch">
+          <input type="checkbox" id="toggleBreakfast" onchange="saveNotifSettings()">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+    </div>
+    <div class="notif-row">
+      <div>
+        <p class="notif-label">🍽️ Almoço</p>
+        <p class="notif-sublabel">Refeição principal — proteína + vegetais</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <input type="time" id="mealLunch" class="notif-time-input" value="12:30">
+        <label class="toggle-switch">
+          <input type="checkbox" id="toggleLunch" onchange="saveNotifSettings()">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+    </div>
+    <div class="notif-row">
+      <div>
+        <p class="notif-label">🥜 Lanche da Tarde</p>
+        <p class="notif-sublabel">Evite ultraprocessados</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <input type="time" id="mealSnack" class="notif-time-input" value="15:30">
+        <label class="toggle-switch">
+          <input type="checkbox" id="toggleSnack" onchange="saveNotifSettings()">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+    </div>
+    <div class="notif-row">
+      <div>
+        <p class="notif-label">🌙 Jantar</p>
+        <p class="notif-sublabel">Leve — proteína + vegetais</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <input type="time" id="mealDinner" class="notif-time-input" value="19:30">
+        <label class="toggle-switch">
+          <input type="checkbox" id="toggleDinner" onchange="saveNotifSettings()">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Apple Sync section -->
+    <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.08)">
+      <p class="text-xs font-bold text-purple-300 uppercase tracking-widest mb-3">🍎 Sincronização Apple</p>
+
+      <button onclick="exportToCalendar()" style="width:100%;background:linear-gradient(90deg,rgba(124,58,237,0.3),rgba(236,72,153,0.2));border:1px solid rgba(192,132,252,0.3);border-radius:14px;padding:13px 16px;color:white;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <span style="font-size:20px">📅</span>
+        <div style="text-align:left">
+          <p style="margin:0;font-size:13px;font-weight:700">Exportar para Calendário</p>
+          <p style="margin:0;font-size:10px;color:rgba(255,255,255,0.5)">Gera arquivo .ics com 12 semanas de treinos</p>
+        </div>
+        <span style="margin-left:auto;opacity:0.5">›</span>
+      </button>
+
+      <button onclick="shareToHealth()" style="width:100%;background:linear-gradient(90deg,rgba(52,211,153,0.2),rgba(124,58,237,0.2));border:1px solid rgba(52,211,153,0.3);border-radius:14px;padding:13px 16px;color:white;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <span style="font-size:20px">❤️</span>
+        <div style="text-align:left">
+          <p style="margin:0;font-size:13px;font-weight:700">Compartilhar com Apple Health</p>
+          <p style="margin:0;font-size:10px;color:rgba(255,255,255,0.5)">Abre opções de compartilhamento do iOS</p>
+        </div>
+        <span style="margin-left:auto;opacity:0.5">›</span>
+      </button>
+
+      <button onclick="addToHomeScreen()" id="iosInstallBtn" style="width:100%;background:linear-gradient(90deg,rgba(14,165,233,0.2),rgba(124,58,237,0.2));border:1px solid rgba(14,165,233,0.3);border-radius:14px;padding:13px 16px;color:white;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:10px">
+        <span style="font-size:20px">📱</span>
+        <div style="text-align:left">
+          <p style="margin:0;font-size:13px;font-weight:700">Instalar no iPhone / Apple Watch</p>
+          <p style="margin:0;font-size:10px;color:rgba(255,255,255,0.5)">Adicionar à Tela de Início para acesso rápido</p>
+        </div>
+        <span style="margin-left:auto;opacity:0.5">›</span>
+      </button>
+    </div>
+
+    <!-- Lista de lembretes ativos -->
+    <div id="schedList" style="margin-top:18px"></div>
+
+    <button onclick="saveNotifSettings();closeSettings()" style="width:100%;margin-top:18px;background:linear-gradient(90deg,#7c3aed,#ec4899);border:none;border-radius:14px;padding:14px;color:white;font-size:15px;font-weight:700;cursor:pointer">
+      Salvar Configurações ✓
+    </button>
+  </div>
+</div>
+
+<!-- iOS Install Tip Modal -->
+<div id="iosInstallTip" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:300;align-items:flex-end;justify-content:center">
+  <div style="background:linear-gradient(160deg,#1a0f2e,#0f0a1e);border:1px solid rgba(192,132,252,0.3);border-radius:28px 28px 0 0;padding:28px 20px 44px;width:100%;max-width:480px">
+    <div class="notif-drag-handle"></div>
+    <h3 style="color:white;font-size:17px;font-weight:700;margin-bottom:16px;text-align:center">📱 Instalar no iPhone</h3>
+    <div style="background:rgba(255,255,255,0.05);border-radius:16px;padding:16px;margin-bottom:12px">
+      <p style="color:rgba(255,255,255,0.8);font-size:13px;line-height:1.7;margin:0">
+        <strong style="color:#c084fc">1.</strong> Toque no ícone <strong style="color:white">Compartilhar</strong> (□↑) na barra inferior do Safari<br>
+        <strong style="color:#c084fc">2.</strong> Role para baixo e toque em <strong style="color:white">"Adicionar à Tela de Início"</strong><br>
+        <strong style="color:#c084fc">3.</strong> Toque em <strong style="color:white">"Adicionar"</strong> no canto superior direito<br>
+        <strong style="color:#ec4899">✓</strong> O app aparecerá na sua tela como um app nativo!
+      </p>
+    </div>
+    <p style="color:rgba(192,132,252,0.7);font-size:11px;text-align:center;margin-bottom:16px">O app funciona offline e sincroniza com o Apple Watch automaticamente via Handoff</p>
+    <button onclick="document.getElementById('iosInstallTip').style.display='none'" style="width:100%;background:linear-gradient(90deg,#7c3aed,#ec4899);border:none;border-radius:14px;padding:14px;color:white;font-size:15px;font-weight:700;cursor:pointer">Entendido!</button>
+  </div>
+</div>
+
+<!-- Bell button (fixed top-right) -->
+<button class="notif-bell-btn" id="bellBtn" onclick="openNotifModal()" aria-label="Lembretes e sincronização">
+  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+  <span class="notif-badge" id="notifBadge" style="display:none">!</span>
+</button>
+
+<!-- ══════════════════════════════════════════ NAV BAR ══ -->
+<nav class="nav-bar glass">
+  <div class="flex items-center justify-around px-1 pt-2">
+    <button class="tab-btn active" id="nav-dashboard" onclick="switchTab('dashboard')" aria-label="Início">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+      Início
+    </button>
+    <button class="tab-btn" id="nav-treinos" onclick="switchTab('treinos')" aria-label="Treinos">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6h18M3 12h18M3 18h18"/></svg>
+      Treinos
+    </button>
+    <button class="tab-btn" id="nav-cardio" onclick="switchTab('cardio')" aria-label="Cardio">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      Cardio
+    </button>
+    <button class="tab-btn" id="nav-medidas" onclick="switchTab('medidas')" aria-label="Medidas">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+      Medidas
+    </button>
+    <button class="tab-btn" id="nav-nutricao" onclick="switchTab('nutricao')" aria-label="Nutrição">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/></svg>
+      Nutrição
+    </button>
+    <button class="tab-btn" id="nav-ciencia" onclick="switchTab('ciencia')" aria-label="Ciência">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+      Ciência
+    </button>
+    <button class="tab-btn" id="nav-config" onclick="switchTab('config')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      Ajustes
+    </button>
+  </div>
+</nav>
+
+
+<!-- ══════════════════════════════════════════ ABA DE CONFIGURAÇÕES ══ -->
+<section id="tab-config" class="section scroll-area px-4">
+  <div class="header-safe">
+    <p class="text-xs text-purple-300 font-semibold tracking-widest uppercase mb-1">Central de</p>
+    <h2 class="text-2xl font-bold gradient-text mb-5">Configurações ⚙️</h2>
+
+    <!-- Notification Status Card -->
+    <div class="card glass mb-4">
+      <div class="flex items-center justify-between mb-3">
+        <div class="flex items-center gap-3">
+          <div style="width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,#7c3aed,#ec4899);display:flex;align-items:center;justify-content:center;font-size:20px">🔔</div>
+          <div>
+            <p class="font-bold text-white text-sm">Notificações Push</p>
+            <span class="notif-status notif-off" id="notifStatusBadge">Verificando...</span>
+          </div>
+        </div>
+        <button onclick="requestNotifPermission()" class="btn-primary" style="width:auto;padding:8px 16px;font-size:13px">Ativar</button>
+      </div>
+      <p class="text-xs text-purple-300 leading-relaxed">Receba lembretes de treino e refeições no iPhone, Apple Watch e tela de bloqueio.</p>
+    </div>
+
+    <!-- Workout Reminder -->
+    <div class="card glass mb-4">
+      <p class="section-title">🏋️ Lembrete de Treino</p>
+      <div class="settings-row">
+        <div><p class="text-sm font-semibold text-white">Ativar Lembrete de Treino</p><p class="text-xs text-purple-300 mt-1">Notificação diária no horário escolhido</p></div>
+        <label class="toggle-switch"><input type="checkbox" id="toggleWorkout" onchange="saveSettings()" checked><span class="toggle-slider"></span></label>
+      </div>
+      <div class="settings-row">
+        <p class="text-sm text-white">Horário do Treino</p>
+        <input type="time" id="workoutTime" value="06:30" onchange="saveSettings()">
+      </div>
+    </div>
+
+    <!-- Meal Reminders -->
+    <div class="card glass mb-4">
+      <p class="section-title">🍽️ Lembretes de Refeição</p>
+      <div class="settings-row">
+        <div class="flex items-center gap-3"><span style="font-size:20px">☀️</span><div><p class="text-sm font-semibold text-white">Café da Manhã</p></div></div>
+        <div class="flex items-center gap-2">
+          <input type="time" id="mealBreakfast" value="07:00" onchange="saveSettings()" style="width:90px">
+          <label class="toggle-switch"><input type="checkbox" id="toggleBreakfast" onchange="saveSettings()" checked><span class="toggle-slider"></span></label>
+        </div>
+      </div>
+      <div class="settings-row">
+        <div class="flex items-center gap-3"><span style="font-size:20px">🥗</span><div><p class="text-sm font-semibold text-white">Almoço</p></div></div>
+        <div class="flex items-center gap-2">
+          <input type="time" id="mealLunch" value="12:00" onchange="saveSettings()" style="width:90px">
+          <label class="toggle-switch"><input type="checkbox" id="toggleLunch" onchange="saveSettings()" checked><span class="toggle-slider"></span></label>
+        </div>
+      </div>
+      <div class="settings-row">
+        <div class="flex items-center gap-3"><span style="font-size:20px">🍎</span><div><p class="text-sm font-semibold text-white">Lanche da Tarde</p></div></div>
+        <div class="flex items-center gap-2">
+          <input type="time" id="mealSnack" value="15:30" onchange="saveSettings()" style="width:90px">
+          <label class="toggle-switch"><input type="checkbox" id="toggleSnack" onchange="saveSettings()" checked><span class="toggle-slider"></span></label>
+        </div>
+      </div>
+      <div class="settings-row" style="border:none">
+        <div class="flex items-center gap-3"><span style="font-size:20px">🌙</span><div><p class="text-sm font-semibold text-white">Jantar</p></div></div>
+        <div class="flex items-center gap-2">
+          <input type="time" id="mealDinner" value="19:30" onchange="saveSettings()" style="width:90px">
+          <label class="toggle-switch"><input type="checkbox" id="toggleDinner" onchange="saveSettings()" checked><span class="toggle-slider"></span></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Apple Ecosystem -->
+    <div class="apple-card mb-4">
+      <div class="flex items-center gap-3 mb-4">
+        <div style="width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,#1d1d1f,#3a3a3c);display:flex;align-items:center;justify-content:center;font-size:22px">🍎</div>
+        <div><p class="font-bold text-white text-sm">Ecossistema Apple</p><p class="text-xs text-purple-300">iPhone · Apple Watch · Calendar · Health</p></div>
+      </div>
+      <button class="apple-btn green" onclick="downloadICS()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <div style="text-align:left"><p>📅 Adicionar ao Apple Calendar</p><p style="font-size:11px;opacity:0.7;font-weight:400">380 eventos · 12 semanas de treinos + refeições</p></div>
+      </button>
+      <button class="apple-btn blue" onclick="shareApp()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        <div style="text-align:left"><p>⌚ Compartilhar com Apple Watch</p><p style="font-size:11px;opacity:0.7;font-weight:400">Via AirDrop, Mensagens ou Siri</p></div>
+      </button>
+      <button class="apple-btn pink" onclick="showHealthModal()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <div style="text-align:left"><p>❤️ Sincronizar com Apple Health</p><p style="font-size:11px;opacity:0.7;font-weight:400">Peso, atividade e progresso</p></div>
+      </button>
+      <button class="apple-btn purple" onclick="showInstallModal()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L12 16M12 2L8 6M12 2L16 6"/><path d="M3 16v3a2 2 0 002 2h14a2 2 0 002-2v-3"/></svg>
+        <div style="text-align:left"><p>📲 Instalar no iPhone (PWA)</p><p style="font-size:11px;opacity:0.7;font-weight:400">Adicionar à Tela de Início</p></div>
+      </button>
+    </div>
+
+    <!-- Preview de lembretes -->
+    <div class="card glass mb-4">
+      <p class="section-title">👀 Preview das Notificações</p>
+      <div class="reminder-preview">
+        <div class="reminder-icon" style="background:linear-gradient(135deg,#7c3aed,#ec4899)">💪</div>
+        <div><p class="text-sm font-bold text-white">Metamorfose — Treino!</p><p class="text-xs text-purple-200">Hip Thrust · Agachamento · Glúteo 🍑</p><p class="reminder-time" id="previewWorkoutTime">06:30</p></div>
+      </div>
+      <div class="reminder-preview">
+        <div class="reminder-icon" style="background:linear-gradient(135deg,#059669,#34d399)">☀️</div>
+        <div><p class="text-sm font-bold text-white">Café da Manhã</p><p class="text-xs text-purple-200">Proteína + carboidrato complexo 🥚</p><p class="reminder-time" id="previewBreakfastTime">07:00</p></div>
+      </div>
+      <div class="reminder-preview">
+        <div class="reminder-icon" style="background:linear-gradient(135deg,#0284c7,#38bdf8)">🥗</div>
+        <div><p class="text-sm font-bold text-white">Almoço</p><p class="text-xs text-purple-200">Prato completo · Sem frituras 🥦</p><p class="reminder-time" id="previewLunchTime">12:00</p></div>
+      </div>
+      <div class="reminder-preview">
+        <div class="reminder-icon" style="background:linear-gradient(135deg,#7c3aed,#6d28d9)">🌙</div>
+        <div><p class="text-sm font-bold text-white">Jantar</p><p class="text-xs text-purple-200">Refeição leve · Sem carboidratos 🥗</p><p class="reminder-time" id="previewDinnerTime">19:30</p></div>
+      </div>
+    </div>
+
+    <button class="btn-primary mb-6" onclick="scheduleAllReminders()">🔔 Ativar Todos os Lembretes Agora</button>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ MODAL SETTINGS (Bell) ══ -->
+<div class="modal-overlay" id="settingsModal" onclick="if(event.target===this)closeSettings()">
+  <div class="modal-sheet" style="position:relative">
+    <button class="modal-close" onclick="closeSettings()">✕</button>
+    <div class="modal-handle"></div>
+    <h3 class="text-lg font-bold text-white mb-1">🔔 Notificações</h3>
+    <p class="text-xs text-purple-300 mb-4">Configure seus lembretes de treino e refeição</p>
+    <div class="settings-row">
+      <div><p class="text-sm font-semibold text-white">Estado</p><span class="notif-status notif-off" id="modalNotifStatus">Verificando...</span></div>
+      <button onclick="requestNotifPermission()" style="background:linear-gradient(135deg,#7c3aed,#ec4899);border:none;color:white;font-weight:600;border-radius:10px;padding:8px 14px;cursor:pointer;font-size:13px">Ativar</button>
+    </div>
+    <div class="settings-row"><p class="text-sm text-white">⏰ Treino</p><input type="time" id="modalWorkoutTime" value="06:30" onchange="syncModalToSettings()"></div>
+    <div class="settings-row"><p class="text-sm text-white">☀️ Café</p><input type="time" id="modalBreakfast" value="07:00" onchange="syncModalToSettings()"></div>
+    <div class="settings-row"><p class="text-sm text-white">🥗 Almoço</p><input type="time" id="modalLunch" value="12:00" onchange="syncModalToSettings()"></div>
+    <div class="settings-row"><p class="text-sm text-white">🍎 Lanche</p><input type="time" id="modalSnack" value="15:30" onchange="syncModalToSettings()"></div>
+    <div class="settings-row" style="border:none"><p class="text-sm text-white">🌙 Jantar</p><input type="time" id="modalDinner" value="19:30" onchange="syncModalToSettings()"></div>
+    <button class="btn-primary mt-4" onclick="scheduleAllReminders();closeSettings()">✅ Salvar & Ativar</button>
+    <button onclick="switchTab('config');closeSettings()" style="width:100%;background:transparent;border:1px solid rgba(255,255,255,0.12);color:#c084fc;font-weight:600;border-radius:14px;padding:12px;cursor:pointer;margin-top:10px;font-size:14px">⚙️ Configurações Completas</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ MODAL APPLE HEALTH ══ -->
+<div class="modal-overlay" id="healthModal" onclick="if(event.target===this)closeHealthModal()">
+  <div class="modal-sheet" style="position:relative">
+    <button class="modal-close" onclick="closeHealthModal()">✕</button>
+    <div class="modal-handle"></div>
+    <h3 class="text-lg font-bold text-white mb-1">❤️ Apple Health</h3>
+    <p class="text-xs text-purple-300 mb-4">Como sincronizar seu progresso com o Apple Health</p>
+    <div style="background:rgba(255,255,255,0.04);border-radius:14px;padding:14px;margin-bottom:12px">
+      <p class="text-sm font-bold text-white mb-2">📱 Passos no iPhone:</p>
+      <ol style="list-style:decimal;padding-left:18px;color:#c4b5fd;font-size:13px;line-height:1.8">
+        <li>Abra o app <strong style="color:white">Saúde</strong> no iPhone</li>
+        <li>Toque em <strong style="color:white">Resumo → Compartilhar</strong></li>
+        <li>Ative <strong style="color:white">Peso Corporal</strong> e <strong style="color:white">Exercícios</strong></li>
+        <li>Registre seu peso no app — sincroniza via HealthKit</li>
+      </ol>
+    </div>
+    <div style="background:rgba(255,255,255,0.04);border-radius:14px;padding:14px;margin-bottom:12px">
+      <p class="text-sm font-bold text-white mb-2">⌚ Apple Watch:</p>
+      <ol style="list-style:decimal;padding-left:18px;color:#c4b5fd;font-size:13px;line-height:1.8">
+        <li>Abra <strong style="color:white">Exercitar</strong> no Apple Watch</li>
+        <li>Escolha <strong style="color:white">Treinamento Funcional</strong> ou <strong style="color:white">Força</strong></li>
+        <li>FCmáx e calorias sincronizam com o Health automaticamente</li>
+        <li>Use as notificações do app para saber a hora do treino ⏰</li>
+      </ol>
+    </div>
+    <div style="background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.2);border-radius:14px;padding:12px;margin-bottom:16px">
+      <p class="text-xs text-green-300 font-semibold">✅ Dica Pro: Adicione o calendário ICS ao Apple Calendar para ver todos os treinos no Apple Watch!</p>
+    </div>
+    <button class="btn-primary" onclick="downloadICS();closeHealthModal()">📅 Baixar Calendário ICS</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ MODAL INSTALL ══ -->
+<div class="modal-overlay" id="installModal" onclick="if(event.target===this)closeInstallModal()">
+  <div class="modal-sheet" style="position:relative">
+    <button class="modal-close" onclick="closeInstallModal()">✕</button>
+    <div class="modal-handle"></div>
+    <h3 class="text-lg font-bold text-white mb-1">📲 Instalar no iPhone</h3>
+    <p class="text-xs text-purple-300 mb-4">Adicione à Tela de Início para usar como app nativo</p>
+    <div style="background:rgba(255,255,255,0.04);border-radius:14px;padding:14px;margin-bottom:12px">
+      <p class="text-sm font-bold text-white mb-3">3 passos simples no Safari:</p>
+      <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px">
+        <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#ec4899);display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0">1</div>
+        <div><p class="text-sm font-semibold text-white">Toque no botão Compartilhar</p><p class="text-xs text-purple-300">Ícone de seta para cima na barra do Safari</p></div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px">
+        <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#ec4899);display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0">2</div>
+        <div><p class="text-sm font-semibold text-white">Toque em "Adicionar à Tela de Início"</p><p class="text-xs text-purple-300">Role para baixo na lista de opções</p></div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px">
+        <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#ec4899);display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0">3</div>
+        <div><p class="text-sm font-semibold text-white">Toque em "Adicionar"</p><p class="text-xs text-purple-300">O ícone Metamorfose aparece na Tela de Início ✨</p></div>
+      </div>
+    </div>
+    <div style="background:rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.2);border-radius:14px;padding:12px;margin-bottom:16px">
+      <p class="text-xs text-purple-300">⚡ Após instalar: funciona <strong style="color:white">offline</strong>, recebe notificações e abre em tela cheia!</p>
+    </div>
+    <button class="btn-primary" onclick="closeInstallModal()">✅ Entendido!</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ iOS INSTALL BANNER ══ -->
+<div class="ios-banner" id="iosBanner">
+  <div style="display:flex;align-items:center;justify-content:space-between">
+    <div style="display:flex;align-items:center;gap:12px">
+      <div style="width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#7c3aed,#ec4899);display:flex;align-items:center;justify-content:center;font-size:22px">✨</div>
+      <div><p class="text-sm font-bold text-white">Instalar Metamorfose</p><p class="text-xs text-purple-300">Toque em <strong style="color:white">Compartilhar</strong> → "Adicionar à Tela de Início"</p></div>
+    </div>
+    <button onclick="document.getElementById('iosBanner').style.display='none';localStorage.setItem('iosBannerDismissed','1')" style="background:transparent;border:none;color:rgba(255,255,255,0.5);font-size:20px;cursor:pointer;padding:4px">✕</button>
+  </div>
+</div>
+
+</div><!-- /app shell -->
+
+<script>
+// ═══════════════════════════ DATA
+const INITIAL_WEIGHT = 80, TARGET_WEIGHT = 70;
+const START_DATE = new Date('2026-05-31');
+let weightData = JSON.parse(localStorage.getItem('metamorfose_weights') || '[]');
+let measureData = JSON.parse(localStorage.getItem('metamorfose_measures') || '[]');
+let weightChart, waistChart;
+
+// ═══════════════════════════ INIT
+document.addEventListener('DOMContentLoaded', () => {
+  const today = new Date().toISOString().split('T')[0];
+  document.getElementById('dateInput').value = today;
+  document.getElementById('measureDate').value = today;
+  initCharts();
+  updateDashboard();
+  renderHistory();
+  renderMeasures();
+  updateCurrentPhase();
+  initDashNotifState();
+});
+
+// ═══════════════════════════ TABS
+function switchTab(name) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  document.getElementById('nav-' + name).classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+// ═══════════════════════════ PHASE ACCORDION
+function togglePhase(id) {
+  const body = document.getElementById(id);
+  const chev = document.getElementById('chevron-' + id);
+  body.classList.toggle('open');
+  chev.classList.toggle('open');
+}
+
+// ═══════════════════════════ WEIGHT
+function addWeightEntry() {
+  const w = parseFloat(document.getElementById('weightInput').value);
+  const d = document.getElementById('dateInput').value;
+  if (!w || !d || w < 30 || w > 250) { showToast('⚠️ Insira um peso válido!'); return; }
+  weightData.push({ weight: w, date: d });
+  weightData.sort((a, b) => new Date(a.date) - new Date(b.date));
+  localStorage.setItem('metamorfose_weights', JSON.stringify(weightData));
+  document.getElementById('weightInput').value = '';
+  updateDashboard(); renderHistory(); updateWeightChart();
+  showToast('✅ Peso registrado!');
+}
+
+function updateDashboard() {
+  const current = weightData.length > 0 ? weightData[weightData.length - 1].weight : INITIAL_WEIGHT;
+  const lost = Math.max(0, INITIAL_WEIGHT - current).toFixed(1);
+  const remaining = Math.max(0, current - TARGET_WEIGHT).toFixed(1);
+  const pct = Math.min(100, Math.max(0, ((INITIAL_WEIGHT - current) / (INITIAL_WEIGHT - TARGET_WEIGHT)) * 100));
+  document.getElementById('currentWeightDisplay').textContent = current;
+  document.getElementById('kgLost').textContent = lost;
+  document.getElementById('kgRemaining').textContent = remaining;
+  document.getElementById('progressPercent').textContent = pct.toFixed(0) + '% da meta';
+  const circ = 2 * Math.PI * 65;
+  document.getElementById('ringFill').style.strokeDasharray = circ;
+  document.getElementById('ringFill').style.strokeDashoffset = circ - (pct / 100) * circ;
+  const week = Math.floor((new Date() - START_DATE) / (7 * 24 * 60 * 60 * 1000)) + 1;
+  document.getElementById('weekNumber').textContent = Math.min(12, Math.max(1, week));
+}
+
+function renderHistory() {
+  const c = document.getElementById('historyList');
+  if (!weightData.length) { c.innerHTML = '<p class="text-sm text-purple-300 text-center py-4">Nenhum registro ainda 💪</p>'; return; }
+  c.innerHTML = [...weightData].reverse().slice(0, 10).map((e, i, arr) => {
+    const prev = arr[i + 1];
+    const diff = prev ? (e.weight - prev.weight).toFixed(1) : null;
+    const col = diff === null ? '' : (diff < 0 ? 'text-green-400' : diff > 0 ? 'text-red-400' : 'text-gray-400');
+    return `<div class="measure-row"><div><p class="text-sm font-semibold text-white">${e.weight} kg</p><p class="text-xs text-purple-300">${formatDate(e.date)}</p></div><span class="text-sm font-bold ${col}">${diff !== null ? (diff > 0 ? '+' : '') + diff + ' kg' : ''}</span></div>`;
+  }).join('');
+}
+
+function clearHistory() {
+  if (confirm('Apagar histórico de peso?')) { weightData = []; localStorage.removeItem('metamorfose_weights'); updateDashboard(); renderHistory(); updateWeightChart(); }
+}
+
+// ═══════════════════════════ MEASURES
+function addMeasureEntry() {
+  const entry = { date: document.getElementById('measureDate').value, waist: parseFloat(document.getElementById('measureWaist').value) || null, hip: parseFloat(document.getElementById('measureHip').value) || null, flanks: parseFloat(document.getElementById('measureFlanks').value) || null, thigh: parseFloat(document.getElementById('measureThigh').value) || null, arm: parseFloat(document.getElementById('measureArm').value) || null };
+  if (!entry.date) { showToast('⚠️ Selecione uma data!'); return; }
+  measureData.push(entry);
+  measureData.sort((a, b) => new Date(a.date) - new Date(b.date));
+  localStorage.setItem('metamorfose_measures', JSON.stringify(measureData));
+  ['measureWaist','measureHip','measureFlanks','measureThigh','measureArm'].forEach(id => document.getElementById(id).value = '');
+  renderMeasures(); updateWaistChart();
+  showToast('✅ Medidas salvas!');
+}
+
+function renderMeasures() {
+  const c = document.getElementById('measureHistory'), cmp = document.getElementById('measureCompare');
+  const labels = { waist: 'Cintura', hip: 'Quadril', flanks: 'Flancos', thigh: 'Coxa D', arm: 'Braço D' };
+  if (!measureData.length) { c.innerHTML = '<p class="text-sm text-purple-300 text-center py-4">Nenhuma medida ainda 📏</p>'; cmp.innerHTML = '<p class="text-sm text-purple-300 text-center py-4">Registre 2 medições para comparar 📐</p>'; return; }
+  c.innerHTML = [...measureData].reverse().slice(0, 5).map(e => `<div class="glass-dark rounded-xl p-3 mb-2"><p class="text-xs font-bold text-purple-300 mb-2">${formatDate(e.date)}</p><div class="grid grid-cols-3 gap-1 text-xs">${Object.entries(labels).map(([k, v]) => e[k] ? `<span class="text-white">${v}: <strong>${e[k]}cm</strong></span>` : '').join('')}</div></div>`).join('');
+  if (measureData.length >= 2) {
+    const last = measureData[measureData.length - 1], prev = measureData[measureData.length - 2];
+    cmp.innerHTML = `<div class="grid grid-cols-2 gap-2">${Object.entries(labels).map(([k, v]) => { if (!last[k] && !prev[k]) return ''; const diff = last[k] && prev[k] ? (last[k] - prev[k]).toFixed(1) : null; const col = diff === null ? 'text-gray-400' : (diff < 0 ? 'text-green-400' : diff > 0 ? 'text-red-400' : 'text-gray-400'); return `<div class="glass-dark rounded-xl p-3 text-center"><p class="text-xs text-purple-300">${v}</p><p class="text-base font-bold text-white">${last[k] || '—'}cm</p>${diff !== null ? `<p class="text-xs font-bold ${col}">${diff > 0 ? '+' : ''}${diff}cm</p>` : ''}</div>`; }).join('')}</div>`;
+  }
+}
+
+function clearMeasures() {
+  if (confirm('Apagar todas as medidas?')) { measureData = []; localStorage.removeItem('metamorfose_measures'); renderMeasures(); updateWaistChart(); }
+}
+
+// ═══════════════════════════ CHARTS
+function initCharts() {
+  Chart.defaults.color = 'rgba(192,132,252,0.7)';
+  Chart.defaults.borderColor = 'rgba(255,255,255,0.05)';
+  const wCtx = document.getElementById('weightChart').getContext('2d');
+  const g = wCtx.createLinearGradient(0, 0, 0, 200);
+  g.addColorStop(0, 'rgba(124,58,237,0.4)'); g.addColorStop(1, 'rgba(124,58,237,0)');
+  weightChart = new Chart(wCtx, { type: 'line', data: { labels: weightData.map(e => formatDateShort(e.date)), datasets: [{ label: 'Peso', data: weightData.map(e => e.weight), borderColor: '#c084fc', backgroundColor: g, borderWidth: 2.5, pointBackgroundColor: '#ec4899', pointRadius: 4, tension: 0.4, fill: true }, { label: 'Meta', data: weightData.map(() => TARGET_WEIGHT), borderColor: 'rgba(52,211,153,0.5)', borderDash: [5, 5], borderWidth: 1.5, pointRadius: 0, fill: false }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { maxTicksLimit: 6 } }, y: { grid: { color: 'rgba(255,255,255,0.05)' }, min: 65, max: 85 } } } });
+  const wstCtx = document.getElementById('waistChart').getContext('2d');
+  const wg = wstCtx.createLinearGradient(0, 0, 0, 180);
+  wg.addColorStop(0, 'rgba(236,72,153,0.35)'); wg.addColorStop(1, 'rgba(236,72,153,0)');
+  waistChart = new Chart(wstCtx, { type: 'line', data: { labels: measureData.filter(e => e.waist).map(e => formatDateShort(e.date)), datasets: [{ label: 'Cintura', data: measureData.filter(e => e.waist).map(e => e.waist), borderColor: '#ec4899', backgroundColor: wg, borderWidth: 2.5, pointBackgroundColor: '#f97316', pointRadius: 4, tension: 0.4, fill: true }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { color: 'rgba(255,255,255,0.05)' } }, y: { grid: { color: 'rgba(255,255,255,0.05)' } } } } });
+}
+
+function updateWeightChart() { if (!weightChart) return; weightChart.data.labels = weightData.map(e => formatDateShort(e.date)); weightChart.data.datasets[0].data = weightData.map(e => e.weight); weightChart.data.datasets[1].data = weightData.map(() => TARGET_WEIGHT); weightChart.update(); }
+function updateWaistChart() { if (!waistChart) return; const f = measureData.filter(e => e.waist); waistChart.data.labels = f.map(e => formatDateShort(e.date)); waistChart.data.datasets[0].data = f.map(e => e.waist); waistChart.update(); }
+
+// ═══════════════════════════ CURRENT PHASE
+function updateCurrentPhase() {
+  const week = Math.floor((new Date() - START_DATE) / (7 * 24 * 60 * 60 * 1000)) + 1;
+  const w = Math.min(12, Math.max(1, week));
+  let phase, color, desc, freq, reps;
+  if (w <= 4) { phase = 'Fase 1 — Adaptação & Técnica'; color = 'phase-1'; desc = 'Aprender movimentos, ativar músculos, construir base sólida.'; freq = '3×/semana · Full Body'; reps = '3 séries · 12–15 reps'; }
+  else if (w <= 8) { phase = 'Fase 2 — Hipertrofia & Escultura'; color = 'phase-2'; desc = 'Aumento de carga e volume. Foco em glúteo, costas e composição.'; freq = '4×/semana · Upper/Lower'; reps = '4 séries · 8–12 reps'; }
+  else { phase = 'Fase 3 — Definição & Especialização'; color = 'phase-3'; desc = 'Volume alto, cargas moderadas-altas, máxima definição e HIIT intenso.'; freq = '4×/semana · ABCD'; reps = '4–5 séries · 6–15 reps'; }
+  document.getElementById('currentPhaseCard').innerHTML = `<div class="flex items-center gap-2 mb-2"><span class="week-pill ${color}">Semana ${w}</span></div><p class="font-bold text-white text-sm mb-1">${phase}</p><p class="text-xs text-purple-200 mb-3">${desc}</p><div class="grid grid-cols-2 gap-2"><div class="glass-dark rounded-xl p-3 text-center"><p class="text-xs text-purple-300">Frequência</p><p class="text-sm font-bold text-white">${freq}</p></div><div class="glass-dark rounded-xl p-3 text-center"><p class="text-xs text-purple-300">Volume</p><p class="text-sm font-bold text-white">${reps}</p></div></div>`;
+}
+
+// ═══════════════════════════ HELPERS
+function formatDate(d) { if (!d) return ''; const [y, m, day] = d.split('-'); return `${day}/${m}/${y}`; }
+function formatDateShort(d) { if (!d) return ''; const [, m, day] = d.split('-'); return `${day}/${m}`; }
+function showToast(msg) { const t = document.createElement('div'); t.className = 'fixed top-6 left-1/2 transform -translate-x-1/2 glass px-5 py-3 rounded-2xl text-sm font-semibold text-white z-50 fade-in'; t.style.cssText += 'box-shadow:0 8px 32px rgba(0,0,0,0.4)'; t.textContent = msg; document.body.appendChild(t); setTimeout(() => t.remove(), 2800); }
+
+
+// ═══════════════════════════ NOTIFICATIONS V3 ─────────────────────────────────
+let swReg = null;
+let scheduledTimers = [];
+
+async function initNotifications() {
+  if (!('serviceWorker' in navigator)) return;
+  try { swReg = await navigator.serviceWorker.ready; } catch(e) {}
+  updateNotifUI();
+  loadSettings();
+  checkIOSInstall();
+  setTimeout(() => {
+    if ('Notification' in window && Notification.permission === 'default') {
+      const bd = document.getElementById('bellDot');
+      if (bd) bd.style.display = 'block';
+    }
+    if ('Notification' in window && Notification.permission === 'granted') {
+      scheduleAllReminders();
+    }
+  }, 2000);
+}
+
+function updateNotifUI() {
+  const perm = ('Notification' in window) ? Notification.permission : 'denied';
+  const map = { granted: ['✅ Ativado','notif-on'], denied: ['🚫 Bloqueado','notif-off'], default: ['⚠️ Pendente','notif-pending'] };
+  const [txt, cls] = map[perm] || map['default'];
+  ['notifStatusBadge','modalNotifStatus'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.textContent = txt; el.className = 'notif-status ' + cls; }
+  });
+  const bd = document.getElementById('bellDot');
+  if (bd) bd.style.display = (perm === 'default') ? 'block' : 'none';
+}
+
+async function requestNotifPermission() {
+  if (!('Notification' in window)) { showToast('⚠️ Seu navegador não suporta notificações'); return; }
+  const perm = await Notification.requestPermission();
+  updateNotifUI();
+  if (perm === 'granted') {
+    showToast('🔔 Notificações ativadas!');
+    scheduleAllReminders();
+    // Update dashboard state
+    const banner = document.getElementById('dashPermBanner');
+    const card = document.getElementById('schedCard');
+    if (banner) banner.classList.add('hidden');
+    if (card) { card.classList.remove('hidden'); renderDashSchedList(); }
+    setTimeout(() => {
+      if (swReg) swReg.showNotification('💪 Metamorfose', {
+        body: 'Notificações ativadas! Você receberá lembretes de treino e refeições 🔥',
+        icon: '/icons/icon-192.png', badge: '/icons/icon-192.png', tag: 'welcome', vibrate: [200,100,200]
+      });
+    }, 800);
+  } else if (perm === 'denied') {
+    showToast('🚫 Bloqueado. Ative em Configurações > Safari > Notificações.');
+  }
+}
+
+function scheduleAllReminders() {
+  if (!('Notification' in window) || Notification.permission !== 'granted') {
+    requestNotifPermission(); return;
+  }
+  scheduledTimers.forEach(t => clearTimeout(t));
+  scheduledTimers = [];
+
+  const cfg = [
+    { togId:'toggleWorkout',   timeId:'workoutTime',    title:'💪 Hora do Treino!',    body:'Sua sessão de hoje está esperando. Hip Thrust, Agachamento, Glúteo 🍑🔥', tag:'workout' },
+    { togId:'toggleBreakfast', timeId:'mealBreakfast',  title:'☀️ Café da Manhã',      body:'Proteína + carboidrato complexo para começar bem o dia. Sem açúcar! 🥚', tag:'breakfast' },
+    { togId:'toggleLunch',     timeId:'mealLunch',      title:'🥗 Hora do Almoço',     body:'Prato completo: proteína + vegetais + carboidrato. Sem frituras! 🥦🍗', tag:'lunch' },
+    { togId:'toggleSnack',     timeId:'mealSnack',      title:'🍎 Lanche da Tarde',    body:'Lanche proteico! Iogurte grego, castanhas ou fruta com proteína 🌰', tag:'snack' },
+    { togId:'toggleDinner',    timeId:'mealDinner',     title:'🌙 Jantar',             body:'Refeição leve: proteína + vegetais. Sem carboidratos pesados à noite! 🥗', tag:'dinner' },
+  ];
+
+  const now = new Date();
+  let count = 0;
+  cfg.forEach(r => {
+    const tog = document.getElementById(r.togId);
+    const timeEl = document.getElementById(r.timeId);
+    if (!tog || !tog.checked || !timeEl) return;
+    const [h, m] = timeEl.value.split(':').map(Number);
+    const target = new Date(now);
+    target.setHours(h, m, 0, 0);
+    if (target <= now) target.setDate(target.getDate() + 1);
+    const delay = target - now;
+    const fire = () => {
+      if (swReg && Notification.permission === 'granted') {
+        swReg.showNotification(r.title, {
+          body: r.body, icon: '/icons/icon-192.png', badge: '/icons/icon-192.png',
+          tag: r.tag, vibrate: [200,100,200], requireInteraction: false,
+          actions: [{action:'open',title:'▶ Abrir App'},{action:'dismiss',title:'✕'}],
+          data: { url: '/' }
+        });
+      }
+      // Re-schedule for next day
+      scheduledTimers.push(setTimeout(fire, 24 * 60 * 60 * 1000));
+    };
+    scheduledTimers.push(setTimeout(fire, delay));
+    count++;
+  });
+
+  saveSettings();
+  showToast('🔔 ' + count + ' lembretes agendados!');
+}
+
+// ═══════════════════════════ SETTINGS ─────────────────────────────────────────
+function saveSettings() {
+  const g = id => { const e = document.getElementById(id); return e ? e.value : ''; };
+  const c = id => { const e = document.getElementById(id); return e ? e.checked : true; };
+  const s = {
+    workoutEnabled: c('toggleWorkout'), workoutTime: g('workoutTime') || '06:30',
+    breakfastEnabled: c('toggleBreakfast'), breakfastTime: g('mealBreakfast') || '07:00',
+    lunchEnabled: c('toggleLunch'), lunchTime: g('mealLunch') || '12:00',
+    snackEnabled: c('toggleSnack'), snackTime: g('mealSnack') || '15:30',
+    dinnerEnabled: c('toggleDinner'), dinnerTime: g('mealDinner') || '19:30',
+  };
+  localStorage.setItem('metamorfose_settings_v3', JSON.stringify(s));
+  updatePreviews();
+  renderDashSchedList();
+}
+
+function loadSettings() {
+  const raw = localStorage.getItem('metamorfose_settings_v3');
+  if (!raw) { updatePreviews(); return; }
+  try {
+    const s = JSON.parse(raw);
+    const sv = (id, v) => { const e = document.getElementById(id); if (e) e.value = v; };
+    const sc = (id, v) => { const e = document.getElementById(id); if (e) e.checked = v; };
+    sv('workoutTime', s.workoutTime || '06:30');
+    sv('mealBreakfast', s.breakfastTime || '07:00');
+    sv('mealLunch', s.lunchTime || '12:00');
+    sv('mealSnack', s.snackTime || '15:30');
+    sv('mealDinner', s.dinnerTime || '19:30');
+    sc('toggleWorkout', s.workoutEnabled !== false);
+    sc('toggleBreakfast', s.breakfastEnabled !== false);
+    sc('toggleLunch', s.lunchEnabled !== false);
+    sc('toggleSnack', s.snackEnabled !== false);
+    sc('toggleDinner', s.dinnerEnabled !== false);
+    sv('modalWorkoutTime', s.workoutTime || '06:30');
+    sv('modalBreakfast', s.breakfastTime || '07:00');
+    sv('modalLunch', s.lunchTime || '12:00');
+    sv('modalSnack', s.snackTime || '15:30');
+    sv('modalDinner', s.dinnerTime || '19:30');
+    updatePreviews();
+  } catch(e) {}
+}
+
+function updatePreviews() {
+  const g = id => { const e = document.getElementById(id); return e ? e.value : ''; };
+  const s = (id, v) => { const e = document.getElementById(id); if (e) e.textContent = v; };
+  s('previewWorkoutTime', g('workoutTime') || '06:30');
+  s('previewBreakfastTime', g('mealBreakfast') || '07:00');
+  s('previewLunchTime', g('mealLunch') || '12:00');
+  s('previewDinnerTime', g('mealDinner') || '19:30');
+}
+
+function syncModalToSettings() {
+  const g = id => { const e = document.getElementById(id); return e ? e.value : ''; };
+  const s = (id, v) => { const e = document.getElementById(id); if (e) e.value = v; };
+  s('workoutTime', g('modalWorkoutTime'));
+  s('mealBreakfast', g('modalBreakfast'));
+  s('mealLunch', g('modalLunch'));
+  s('mealSnack', g('modalSnack'));
+  s('mealDinner', g('modalDinner'));
+  saveSettings();
+}
+
+// ═══════════════════════════ MODAL CONTROLS ───────────────────────────────────
+function openSettings() { const m = document.getElementById('settingsModal'); if (m) m.classList.add('open'); }
+function closeSettings() { const m = document.getElementById('settingsModal'); if (m) m.classList.remove('open'); }
+function showHealthModal() { const m = document.getElementById('healthModal'); if (m) m.classList.add('open'); }
+function closeHealthModal() { const m = document.getElementById('healthModal'); if (m) m.classList.remove('open'); }
+function showInstallModal() { const m = document.getElementById('installModal'); if (m) m.classList.add('open'); }
+function closeInstallModal() { const m = document.getElementById('installModal'); if (m) m.classList.remove('open'); }
+
+// ═══════════════════════════ ICS DOWNLOAD ─────────────────────────────────────
+function downloadICS() {
+  const a = document.createElement('a');
+  a.href = '/metamorfose-plano.ics';
+  a.download = 'metamorfose-plano.ics';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  showToast('📅 Calendário baixado! Abra no iPhone para importar ao Apple Calendar.');
+}
+
+// ═══════════════════════════ WEB SHARE API ────────────────────────────────────
+async function shareApp() {
+  const data = { title: '💪 Metamorfose — Recomposição Corporal', text: 'Plano científico de 12 semanas: treinos, nutrição e progresso 🔥 Baseado em 344 estudos.', url: 'https://iohhkjz1.scispace.co' };
+  if (navigator.share) {
+    try { await navigator.share(data); showToast('✅ Compartilhado!'); }
+    catch(e) { if (e.name !== 'AbortError') copyLink(); }
+  } else { copyLink(); }
+}
+async function copyLink() {
+  try { await navigator.clipboard.writeText('https://iohhkjz1.scispace.co'); showToast('🔗 Link copiado! Cole no iMessage ou AirDrop.'); }
+  catch(e) { showToast('🔗 https://iohhkjz1.scispace.co'); }
+}
+
+// ═══════════════════════════ iOS INSTALL DETECTION ────────────────────────────
+function checkIOSInstall() {
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  const isStandalone = window.navigator.standalone === true;
+  if (isIOS && !isStandalone && !localStorage.getItem('iosBannerDismissed')) {
+    setTimeout(() => {
+      const b = document.getElementById('iosBanner');
+      if (b) { b.style.display = 'block'; b.classList.add('show'); }
+    }, 5000);
+  }
+}
+
+// ═══════════════════════════ SERVICE WORKER ───────────────────────────────────
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(() => {});
+  });
+}
+
+window.addEventListener('load', initNotifications);
+
+// ═══════════════════════════ DASHBOARD NOTIFICATION STATE
+function initDashNotifState() {
+  if (!('Notification' in window)) return;
+  if (Notification.permission === 'granted') {
+    document.getElementById('dashPermBanner').classList.add('hidden');
+    document.getElementById('schedCard').classList.remove('hidden');
+    renderDashSchedList();
+  } else if (Notification.permission === 'default') {
+    document.getElementById('dashPermBanner').classList.remove('hidden');
+    document.getElementById('schedCard').classList.add('hidden');
+  }
+}
+
+function renderDashSchedList() {
+  const el = document.getElementById('dashSchedList');
+  if (!el) return;
+  const s = JSON.parse(localStorage.getItem('metamorfose_settings_v3') || '{}');
+  const configs = [
+    { label: '💪 Treino',        enabled: s.workoutEnabled !== false,   time: s.workoutTime   || '06:30' },
+    { label: '🌅 Café da Manhã',  enabled: s.breakfastEnabled !== false, time: s.breakfastTime || '07:00' },
+    { label: '☀️ Almoço',         enabled: s.lunchEnabled !== false,     time: s.lunchTime     || '12:00' },
+    { label: '🍎 Lanche',         enabled: s.snackEnabled !== false,     time: s.snackTime     || '15:30' },
+    { label: '🌙 Jantar',          enabled: s.dinnerEnabled !== false,    time: s.dinnerTime    || '19:30' },
+  ];
+  el.innerHTML = configs.map(c =>
+    `<div class="sched-item"><span class="sched-dot ${c.enabled ? 'active' : 'inactive'}"></span><span style="flex:1;font-size:12px;color:rgba(255,255,255,0.8)">${c.label}</span><span style="font-size:12px;font-weight:700;color:${c.enabled ? '#c084fc' : 'rgba(255,255,255,0.3)'}">${c.enabled ? c.time : 'Off'}</span></div>`
+  ).join('');
+}
+
+
+// ═══════════════════════════ FRASES MOTIVACIONAIS
+const QUOTES = [
+  '"A dor que você sente hoje será a força que você sentirá amanhã."',
+  '"Disciplina é escolher entre o que você quer agora e o que você mais quer."',
+  '"Seu corpo pode aguentar quase tudo. É a mente que você precisa convencer."',
+  '"Cada repetição te aproxima da mulher que você quer ser."',
+  '"Não existe transformação sem desconforto."',
+  '"O segredo é consistência, não perfeição."',
+  '"Levante mais pesado que suas dúvidas."',
+  '"Resultados acontecem com o tempo, não da noite para o dia."',
+  '"Você não precisa ser perfeita, precisa ser persistente."',
+  '"A melhor versão de você está do outro lado do esforço."',
+  '"Treinar é um ato de amor próprio."',
+  '"Cada gota de suor é uma gota a menos de dúvida."',
+];
+function rotateQuote() {
+  const el = document.getElementById('quoteText');
+  if (!el) return;
+  const idx = Math.floor(Math.random() * QUOTES.length);
+  el.textContent = QUOTES[idx];
+}
+rotateQuote();
+setInterval(rotateQuote, 30000);
+
+// ═══════════════════════════ CONTADOR DE SEQUÊNCIA
+const STREAK_KEY = 'metamorfose_streak';
+function getStreak() { return JSON.parse(localStorage.getItem(STREAK_KEY) || '{"count":0,"lastDate":""}'); }
+function saveStreak(s) { localStorage.setItem(STREAK_KEY, JSON.stringify(s)); }
+function updateStreakUI() {
+  const s = getStreak();
+  const el = document.getElementById('streakNum');
+  if (el) el.textContent = s.count;
+}
+function registerTrainingDay() {
+  const s = getStreak();
+  const today = new Date().toISOString().split('T')[0];
+  if (s.lastDate === today) { showToast('✅ Treino de hoje já registrado!'); return; }
+  const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
+  if (s.lastDate === yesterday) { s.count += 1; }
+  else if (s.lastDate !== today) { s.count = 1; }
+  s.lastDate = today;
+  saveStreak(s);
+  updateStreakUI();
+  showToast('🔥 Sequência: ' + s.count + ' dias!');
+  // Save training day for weekly progress
+  const days = JSON.parse(localStorage.getItem('metamorfose_traindays') || '[]');
+  if (!days.includes(today)) days.push(today);
+  localStorage.setItem('metamorfose_traindays', JSON.stringify(days));
+  renderWeekGrid();
+}
+updateStreakUI();
+
+// ═══════════════════════════ HIDRATAÇÃO
+const WATER_KEY = 'metamorfose_water';
+const WATER_GOAL = 8;
+function getWater() {
+  const d = JSON.parse(localStorage.getItem(WATER_KEY) || '{"count":0,"date":""}');
+  const today = new Date().toISOString().split('T')[0];
+  if (d.date !== today) { d.count = 0; d.date = today; localStorage.setItem(WATER_KEY, JSON.stringify(d)); }
+  return d;
+}
+function addWater() {
+  const d = getWater();
+  if (d.count >= WATER_GOAL) { showToast('🎉 Meta de hidratação alcançada!'); return; }
+  d.count++;
+  d.date = new Date().toISOString().split('T')[0];
+  localStorage.setItem(WATER_KEY, JSON.stringify(d));
+  updateWaterUI();
+  if (d.count === WATER_GOAL) showToast('💧 Parabéns! Meta de 8 copos atingida!');
+  else showToast('💧 +1 copo! (' + d.count + '/' + WATER_GOAL + ')');
+}
+function resetWater() {
+  localStorage.setItem(WATER_KEY, JSON.stringify({count:0, date: new Date().toISOString().split('T')[0]}));
+  updateWaterUI();
+}
+function updateWaterUI() {
+  const d = getWater();
+  document.getElementById('waterCount').textContent = d.count;
+  document.getElementById('waterFill').style.width = (d.count / WATER_GOAL * 100) + '%';
+  const drops = Array.from({length: WATER_GOAL}, (_, i) => 
+    `<span class="water-drop ${i < d.count ? '' : 'empty'}">💧</span>`
+  ).join('');
+  document.getElementById('waterDrops').innerHTML = drops;
+}
+updateWaterUI();
+
+// ═══════════════════════════ TIMER DE DESCANSO
+let timerInterval = null;
+let timerSeconds = 0;
+function startTimer(secs) {
+  if (timerInterval) clearInterval(timerInterval);
+  timerSeconds = secs;
+  document.getElementById('timerArea').style.display = 'flex';
+  updateTimerDisplay();
+  timerInterval = setInterval(() => {
+    timerSeconds--;
+    updateTimerDisplay();
+    if (timerSeconds <= 0) {
+      clearInterval(timerInterval);
+      timerInterval = null;
+      showToast('⏱ Descanso acabou! Próxima série! 💪');
+      // Try vibration
+      if (navigator.vibrate) navigator.vibrate([200,100,200,100,200]);
+      document.getElementById('timerArea').style.display = 'none';
+    }
+  }, 1000);
+}
+function stopTimer() {
+  if (timerInterval) clearInterval(timerInterval);
+  timerInterval = null;
+  document.getElementById('timerArea').style.display = 'none';
+}
+function updateTimerDisplay() {
+  const m = Math.floor(timerSeconds / 60);
+  const s = timerSeconds % 60;
+  document.getElementById('timerDisplay').textContent = m + ':' + String(s).padStart(2, '0');
+}
+
+// ═══════════════════════════ ESTIMATIVA DE GORDURA (Método Navy)
+function calcBodyFat() {
+  const waist = parseFloat(document.getElementById('bfWaist').value);
+  const hip = parseFloat(document.getElementById('bfHip').value);
+  const neck = parseFloat(document.getElementById('bfNeck').value);
+  const height = 171; // Fixed for this user
+  if (!waist || !hip || !neck) { showToast('⚠️ Preencha todos os campos!'); return; }
+  // Navy formula for women:
+  const bf = 495 / (1.29579 - 0.35004 * Math.log10(waist + hip - neck) + 0.22100 * Math.log10(height)) - 450;
+  const bfRounded = Math.max(5, Math.min(50, bf)).toFixed(1);
+  document.getElementById('bfResult').style.display = 'block';
+  document.getElementById('bfPercent').textContent = bfRounded + '%';
+  document.getElementById('bfBar').style.width = Math.min(100, bfRounded * 2) + '%';
+  let cat = '';
+  if (bf < 14) cat = 'Essencial';
+  else if (bf < 21) cat = 'Atleta';
+  else if (bf < 25) cat = 'Fitness (Boa Forma) 🎯';
+  else if (bf < 32) cat = 'Aceitável';
+  else cat = 'Acima do ideal';
+  document.getElementById('bfCategory').textContent = cat + ' (mulheres)';
+}
+
+// ═══════════════════════════ PROGRESSO SEMANAL
+function renderWeekGrid() {
+  const grid = document.getElementById('weekGrid');
+  const summary = document.getElementById('weekSummary');
+  if (!grid) return;
+  const today = new Date();
+  const startOfWeek = new Date(today);
+  startOfWeek.setDate(today.getDate() - today.getDay()); // Start on Sunday
+  const days = JSON.parse(localStorage.getItem('metamorfose_traindays') || '[]');
+  const dayLabels = ['D','S','T','Q','Q','S','S'];
+  let trainedCount = 0;
+  let html = '';
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(startOfWeek);
+    d.setDate(startOfWeek.getDate() + i);
+    const dateStr = d.toISOString().split('T')[0];
+    const isToday = dateStr === today.toISOString().split('T')[0];
+    const isDone = days.includes(dateStr);
+    if (isDone) trainedCount++;
+    let cls = 'day-dot';
+    if (isDone) cls += ' done';
+    else if (isToday) cls += ' today';
+    else cls += ' rest';
+    html += `<div class="${cls}">${dayLabels[i]}</div>`;
+  }
+  grid.innerHTML = html;
+  if (summary) summary.textContent = trainedCount + '/7 treinos esta semana';
+}
+renderWeekGrid();
+
+// ═══════════════════════════ EXPORTAÇÃO DE DADOS
+function exportAllData() {
+  const data = {
+    exportDate: new Date().toISOString(),
+    weights: JSON.parse(localStorage.getItem('metamorfose_weights') || '[]'),
+    measures: JSON.parse(localStorage.getItem('metamorfose_measures') || '[]'),
+    streak: getStreak(),
+    water: getWater(),
+    trainingDays: JSON.parse(localStorage.getItem('metamorfose_traindays') || '[]'),
+    settings: JSON.parse(localStorage.getItem('metamorfose_settings_v3') || '{}'),
+  };
+  const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'metamorfose_dados_' + new Date().toISOString().split('T')[0] + '.json';
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('📥 Dados exportados!');
+}
+
+// ═══════════════════════════ COMPARTILHAR APP
+function shareApp() {
+  if (navigator.share) {
+    navigator.share({title:'Metamorfose — Plano Científico', text:'App de recomposição corporal baseado em 344 estudos! 💪', url:'https://iohhkjz1.scispace.co'}).catch(()=>{});
+  } else {
+    navigator.clipboard.writeText('https://iohhkjz1.scispace.co').then(() => showToast('🔗 Link copiado!'));
+  }
+}
+</script>
+</body>
+</html>
